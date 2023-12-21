@@ -1,0 +1,27 @@
+<div>
+    <mat-toolbar>
+        <button mat-button routerLink="/dashboard">Dashboard</button>
+        <button mat-button routerLink="/addticket">Add Ticket</button>
+        <button mat-button routerLink="/report">Report</button>
+        <button mat-button routerLink="/rootcause">Root Cause Analysis</button>
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Search ID/Name</mat-label>
+                <input matInput (input)="applyFilter($event)" />
+            </mat-form-field>
+        </div>
+    </mat-toolbar>
+
+    <div>
+        <mat-table [dataSource]="filteredTickets">
+            <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+                <mat-header-cell *matHeaderCellDef>{{ column | titlecase }}</mat-header-cell>
+                <mat-cell *matCellDef="let ticket">{{ ticket[column] }}</mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+</div>

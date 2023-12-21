@@ -1,0 +1,39 @@
+<div>
+    <div>
+        <img src="../../assets/login.png" alt="Login Image">
+    </div>
+
+    <div>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Login</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <form #loginForm="ngForm">
+                    <mat-form-field>
+                        <input matInput placeholder="Username" name="username" [(ngModel)]="username" required>
+                        <mat-error
+                            *ngIf="loginForm.controls['username'].hasError('required') && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)">
+                            Username is required
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <input matInput type="password" placeholder="Password" name="password" [(ngModel)]="password"
+                            required>
+                        <mat-error
+                            *ngIf="loginForm.controls['password'].hasError('required') && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+                            Password is required
+                        </mat-error>
+                    </mat-form-field>
+
+                    <button [routerLink]="'dashboard'" mat-raised-button color="indigo-500" type="submit"
+                        [disabled]="!username || !password">
+                        Login
+                    </button>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
