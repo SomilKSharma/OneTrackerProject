@@ -1,0 +1,30 @@
+<table class="table-auto w-full">
+    <thead>
+        <tr class="border">
+            <th class="px-4 p text-xl y-2">ID</th>
+            <th class="px-4 p text-xl y-2">Department</th>
+            <th class="px-4 p text-xl y-2">Category</th>
+            <th class="px-4 p text-xl y-2">Sub-Category</th>
+            <th class="px-4 p text-xl y-2">Status</th>
+            <th class="px-4 p text-xl y-2">Customer</th>
+            <th class="px-4 p text-xl y-2">Issue Time</th>
+            <th class="px-4 p text-xl y-2">Age</th>
+            <th class="px-4 p text-xl y-2">Last Modified</th>
+            <th class="px-4 p text-xl y-2">Root Cause Analysis</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ticket of filteredTickets">
+            <td class="border text-xl px-4 py-2">{{ ticket.id }}</td>
+            <td class="border text-xl px-4 py-2">{{ ticket.department }}</td>
+            <td class="border text-xl px-4 py-2">{{ ticket.category }}</td>
+            <td class="border text-xl px-4 py-2">{{ ticket.subCategory }}</td>
+            <td class="border text-xl px-4 py-2">{{ ticket.status }}</td>
+            <td class="border text-xl px-4 py-2">{{ ticket.customer }}</td>
+            <td class="border text-xl px-4 py-2">{{ ticket.issueTime | date: 'short' }}</td>
+            <td class="border text-xl px-4 py-2">{{ ticket.age }} days</td>
+            <td class="border text-xl px-4 py-2">{{ ticket.lastModifiedDate | date: 'short' }}</td>
+            <td class="border text-xl px-4 py-2">{{ ticket.rootCauseAnalysis }}</td>
+        </tr>
+    </tbody>
+</table>
