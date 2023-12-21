@@ -1,4 +1,7 @@
-<mat-toolbar color="primary" class="md-toolbar-tools">
-    <img src="../../assets/logo.svg" width="100px" alt="One Tracker Logo">
-    <span>One Tracker</span>
-</mat-toolbar>
+<header class="bg-blue-500 p-3">
+    <div class="flex items-center">
+        <img [routerLink]="'login'" src="../../assets/logo.svg" width="100px" alt="One Tracker Logo" class="mr-2">
+        <span class="text-white text-5xl font-bold">One Tracker</span>
+    </div>
+</header>
+<router-outlet></router-outlet>
