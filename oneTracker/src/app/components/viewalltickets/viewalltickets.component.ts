@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FilterService } from '../../services/filter.service';
 
 @Component({
   selector: 'app-viewalltickets',
   templateUrl: './viewalltickets.component.html',
-  styleUrl: './viewalltickets.component.scss'
+  styleUrls: ['./viewalltickets.component.scss'] 
 })
-export class ViewallticketsComponent {
+export class ViewallticketsComponent implements OnInit {
   openTickets = [
     {
       id: 1,
@@ -15,7 +16,7 @@ export class ViewallticketsComponent {
       status: 'Open',
       customer: 'John Doe',
       issueTime: new Date('2023-01-01T10:30:00'),
-      age: 5, // in days
+      age: 5, 
       lastModifiedDate: new Date('2023-01-05T15:45:00'),
       rootCauseAnalysis: 'Pending',
     },
@@ -27,17 +28,17 @@ export class ViewallticketsComponent {
       status: 'In Progress',
       customer: 'Jane Smith',
       issueTime: new Date('2023-01-02T08:45:00'),
-      age: 3, // in days
+      age: 3, 
       lastModifiedDate: new Date('2023-01-05T11:20:00'),
       rootCauseAnalysis: 'Completed',
     },
-    // Add more dummy tickets as needed
+    
   ];
 
-  // Filtered tickets to be displayed in the table
-  filteredTickets = this.openTickets;
+  
+  filteredTickets: any[] = [];
 
-  // Define the columns to display in the table
+  
   displayedColumns: string[] = [
     'id',
     'department',
@@ -50,4 +51,19 @@ export class ViewallticketsComponent {
     'lastModifiedDate',
     'rootCauseAnalysis',
   ];
+
+  constructor(private filterService: FilterService) {}
+
+  ngOnInit(): void {
+    this.filterService.getFilter().subscribe((filter) => {
+      this.filterTickets(filter);
+    });
+  }
+
+  filterTickets(filter: string): void {
+    
+    this.filteredTickets = this.openTickets.filter((ticket) =>
+      ticket.customer.toLowerCase().includes(filter.toLowerCase())
+    );
+  }
 }

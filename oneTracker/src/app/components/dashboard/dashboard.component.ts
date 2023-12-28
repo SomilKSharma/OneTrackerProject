@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/internal/operators/filter';
+import { FilterService } from '../../services/filter.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -6,6 +10,19 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
+
+  constructor(private router: Router, private filterService: FilterService) {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.isViewAllTicketsActive();
+    });
+  }
+
+  isViewAllTicketsActive(): boolean {
+    return this.router.url === '/dashboard/viewalltickets';
+  }
+
   openTickets = [
     {
       id: 1,
@@ -15,7 +32,7 @@ export class DashboardComponent {
       status: 'Open',
       customer: 'John Doe',
       issueTime: new Date('2023-01-01T10:30:00'),
-      age: 5, // in days
+      age: 5, 
       lastModifiedDate: new Date('2023-01-05T15:45:00'),
       rootCauseAnalysis: 'Pending',
     },
@@ -27,17 +44,15 @@ export class DashboardComponent {
       status: 'In Progress',
       customer: 'Jane Smith',
       issueTime: new Date('2023-01-02T08:45:00'),
-      age: 3, // in days
+      age: 3, 
       lastModifiedDate: new Date('2023-01-05T11:20:00'),
       rootCauseAnalysis: 'Completed',
     },
-    // Add more dummy tickets as needed
+    
   ];
-
-  // Filtered tickets to be displayed in the table
+  
   filteredTickets = this.openTickets;
 
-  // Define the columns to display in the table
   displayedColumns: string[] = [
     'id',
     'department',
@@ -51,17 +66,9 @@ export class DashboardComponent {
     'rootCauseAnalysis',
   ];
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement)?.value || '';
-    if (filterValue.trim()) {
-      const lowerCaseFilter = filterValue.toLowerCase();
-      this.filteredTickets = this.openTickets.filter(
-        (ticket) =>
-          ticket.customer.toLowerCase().includes(lowerCaseFilter) ||
-          ticket.id.toString().includes(filterValue)
-      );
-    } else {
-      this.filteredTickets = this.openTickets;
-    }
+  applyFilter(event: any): void {
+    const filterValue = event.target.value.toLowerCase();
+    this.filterService.setFilter(filterValue);
   }
+ 
 }

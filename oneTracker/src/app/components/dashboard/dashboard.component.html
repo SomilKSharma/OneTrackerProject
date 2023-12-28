@@ -6,9 +6,9 @@
         <a routerLink="/dashboard/addticket" class="text-2xl mr-4 hover:text-blue-500">Add Ticket</a>
         <a routerLink="/dashboard/data" class="text-2xl mr-4 hover:text-blue-500">Report</a>
         <a routerLink="/dashboard/rootcause" class="text-2xl hover:text-blue-500">Root Cause Analysis</a>
-        <div class="ml-auto">
+        <div class="ml-auto" *ngIf="isViewAllTicketsActive()">
             <div class="relative">
-                <input type="text" placeholder="Search ID/Name"
+                <input type="text" placeholder="Search Name"
                     class="py-2 text-2xl px-4 rounded bg-blue-500 text-white focus:outline-none focus:ring focus:ring-blue-200"
                     (input)="applyFilter($event)" />
             </div>

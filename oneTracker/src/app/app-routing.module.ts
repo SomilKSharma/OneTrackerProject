@@ -6,6 +6,7 @@ import { AddticketComponent } from './components/addticket/addticket.component';
 import { DataComponent } from './components/data/data.component';
 import { ViewallticketsComponent } from './components/viewalltickets/viewalltickets.component';
 import { ViewticketComponent } from './components/viewticket/viewticket.component';
+import { EditticketComponent } from './components/editticket/editticket.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: 'data', component: DataComponent },
       { path: 'viewalltickets', component: ViewallticketsComponent },
       { path: 'viewticket', component: ViewticketComponent },
+      { path: 'editticket', component: EditticketComponent },
     ] },
 ];
 
