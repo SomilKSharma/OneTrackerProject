@@ -1,9 +1,11 @@
+<!-- dashboard.component.html -->
+
 <div class="bg-white text-black p-4">
     <div class="flex border p-2 items-center">
-        <a href="/dashboard" class="text-2xl mr-4 hover:text-blue-500">Dashboard</a>
-        <a href="/addticket" class="text-2xl mr-4 hover:text-blue-500">Add Ticket</a>
-        <a href="/report" class="text-2xl mr-4 hover:text-blue-500">Report</a>
-        <a href="/rootcause" class="text-2xl hover:text-blue-500">Root Cause Analysis</a>
+        <a routerLink="/dashboard/viewalltickets" class="text-2xl mr-4 hover:text-blue-500">Dashboard</a>
+        <a routerLink="/dashboard/addticket" class="text-2xl mr-4 hover:text-blue-500">Add Ticket</a>
+        <a routerLink="/dashboard/data" class="text-2xl mr-4 hover:text-blue-500">Report</a>
+        <a routerLink="/dashboard/rootcause" class="text-2xl hover:text-blue-500">Root Cause Analysis</a>
         <div class="ml-auto">
             <div class="relative">
                 <input type="text" placeholder="Search ID/Name"
