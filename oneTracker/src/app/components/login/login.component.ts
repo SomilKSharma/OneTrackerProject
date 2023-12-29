@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { AuthService } from '../../services/auth.service'; 
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class LoginComponent {
   password: string = '';
   setError: boolean = false;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router:Router) {}
   onSubmit() {
     if (this.username && this.password) {
       this.login();
@@ -32,6 +33,7 @@ export class LoginComponent {
     this.authService.login(this.username, this.password).subscribe(response => {
       // Handle successful login (navigate, display a message, etc.)
       console.log('Login successful');
+      this.router.navigate(['/dashboard/viewalltickets'])
     }, error => {
       this.setError = true;
       setTimeout(() => {
