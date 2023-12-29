@@ -1,7 +1,15 @@
 {
   "users": [
-    { "id": 1, "username": "user1", "password": "password1" },
-    { "id": 2, "username": "user2", "password": "password2" }
+    {
+      "id": 1,
+      "username": "user1",
+      "password": "password1"
+    },
+    {
+      "id": 2,
+      "username": "user2",
+      "password": "password2"
+    }
   ],
   "tickets": [
     {
@@ -183,6 +191,54 @@
       "age": 4,
       "lastModifiedDate": "2023-01-18T13:00:00",
       "rootCauseAnalysis": "Pending"
+    },
+    {
+      "id": 16,
+      "department": "asd",
+      "category": "asd",
+      "subCategory": "",
+      "status": "",
+      "customer": "",
+      "issueTime": "2023-12-29T12:54:58.964Z",
+      "age": 0,
+      "lastModifiedDate": "",
+      "rootCauseAnalysis": ""
+    },
+    {
+      "id": 17,
+      "department": "gsfdgfdsdfg",
+      "category": "fdgdfgdsfgdfgsdfg",
+      "subCategory": "sdfg",
+      "status": "sdfgs",
+      "customer": "dfg",
+      "issueTime": "2023-12-30T18:38",
+      "age": 22,
+      "lastModifiedDate": "2023-12-30T18:39",
+      "rootCauseAnalysis": "hfds"
+    },
+    {
+      "id": 18,
+      "department": "vsdf",
+      "category": "xcv",
+      "subCategory": "xvb",
+      "status": "xcvbx",
+      "customer": "vcb",
+      "issueTime": "2023-12-16T18:40",
+      "age": 1321,
+      "lastModifiedDate": "2023-12-30T18:40",
+      "rootCauseAnalysis": "fd"
+    },
+    {
+      "id": 19,
+      "department": "afd",
+      "category": "adsfa",
+      "subCategory": "sdf",
+      "status": "adsf",
+      "customer": "adsf",
+      "issueTime": "2023-12-23T18:42",
+      "age": 12,
+      "lastModifiedDate": "2024-01-06T18:42",
+      "rootCauseAnalysis": "asdf"
     }
   ]
 }
