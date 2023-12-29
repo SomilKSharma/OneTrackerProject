@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanActivate, Router } from '@angular/router';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -10,10 +9,7 @@ export class AuthGuard implements CanActivate {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    
+  canActivate(){    
     // Check if the user is authenticated
     if (this.authService.isLoggedIn()) {
       return true;
@@ -22,4 +18,23 @@ export class AuthGuard implements CanActivate {
       return this.router.createUrlTree(['/']);
     }
   }
+
+}
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthGuardLogin implements CanActivate {
+
+  constructor(private authService: AuthService, private router: Router) {}
+
+  canActivate(){    
+    // Check if the user is authenticated
+    if (!this.authService.isLoggedIn()) {
+      return true;
+    } else {
+      // If not authenticated, redirect to the login page
+      return this.router.createUrlTree(['/dashboard/viewalltickets']);
+    }
+  }
+
 }

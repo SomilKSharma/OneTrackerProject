@@ -7,10 +7,10 @@ import { DataComponent } from './components/data/data.component';
 import { ViewallticketsComponent } from './components/viewalltickets/viewalltickets.component';
 import { ViewticketComponent } from './components/viewticket/viewticket.component';
 import { EditticketComponent } from './components/editticket/editticket.component';
-import { AuthGuard } from './services/auth.guard';
+import { AuthGuard, AuthGuardLogin } from './services/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '',  canActivate: [AuthGuardLogin], component: LoginComponent },
   {
     path: 'dashboard', 
     component: DashboardComponent,

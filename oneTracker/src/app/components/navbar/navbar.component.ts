@@ -12,7 +12,10 @@ export class NavbarComponent {
   constructor(public authService: AuthService, private router:Router) {}
   logout(): void{
     this.authService.logout();
-    this.router.navigate(['/'])
+    setTimeout(() => {
+      
+      this.router.navigate(['/'])
+    },500)
 }
 
 }
