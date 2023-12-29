@@ -2,8 +2,8 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,6 @@ export class AuthService {
 
   login(username: string, password: string): Observable<any> {
     const payload = { username, password };
-  console.log('Login Payload:', payload);
     return this.http.post<any>(`${this.apiUrl}/login`, payload)
       .pipe(
         tap(response => {
@@ -67,7 +66,7 @@ export class AuthService {
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(`${operation} failed: ${error.message}`);
-      return of(result as T);
+      return throwError(error);
     };
   }
 }

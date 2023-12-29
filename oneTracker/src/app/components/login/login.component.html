@@ -28,6 +28,7 @@
                             Password is required
                         </mat-error>
                     </mat-form-field>
+                    <p *ngIf="setError" class="text-red-600">Invalid Credentials</p>
                     <button mat-raised-button [style.background-color]="(!username || !password) ? '' : '#2196f3'"
                         [style.color]="(!username || !password) ? '' : '#ffffff'" type="submit"
                         [disabled]="!username || !password" class="w-full p-3  text-white rounded-md">

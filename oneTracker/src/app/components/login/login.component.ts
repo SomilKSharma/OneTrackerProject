@@ -19,6 +19,7 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent {
   username: string = '';
   password: string = '';
+  setError: boolean = false;
 
   constructor(private authService: AuthService) {}
   onSubmit() {
@@ -32,8 +33,10 @@ export class LoginComponent {
       // Handle successful login (navigate, display a message, etc.)
       console.log('Login successful');
     }, error => {
-      // Handle login failure (display an error message, etc.)
-      console.error('Login failed');
+      this.setError = true;
+      setTimeout(() => {
+        this.setError = false;
+      }, 2000);
     });
   }
 }
