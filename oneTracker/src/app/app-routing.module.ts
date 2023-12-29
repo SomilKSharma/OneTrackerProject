@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: 'dashboard', 
     component: DashboardComponent,
-    canActivate: [AuthGuard], // Apply the AuthGuard to the dashboard and its children
+    canActivate: [AuthGuard],
     children: [
       { path: 'addticket', component: AddticketComponent },
       { path: 'data', component: DataComponent },
