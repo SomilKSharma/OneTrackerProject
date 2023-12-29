@@ -11,6 +11,9 @@ import { TicketService } from '../../services/ticket.service';
 export class ViewallticketsComponent implements OnInit {
   openTickets: any[] = [];
   filteredTickets: any[] = [];
+  displayedTickets: any[] = [];
+  itemsPerPage = 5;
+  currentPage = 1;
 
   displayedColumns: string[] = [
     'id',
@@ -36,6 +39,7 @@ export class ViewallticketsComponent implements OnInit {
       this.openTickets = tickets;
       this.filterService.getFilter().subscribe((filter) => {
         this.filterTickets(filter);
+        this.paginate(); // Call paginate after fetching tickets
       });
     });
   }
@@ -44,25 +48,23 @@ export class ViewallticketsComponent implements OnInit {
     this.filteredTickets = this.openTickets.filter((ticket) =>
       ticket.customer.toLowerCase().includes(filter.toLowerCase())
     );
+    this.paginate(); // Call paginate after fetching tickets
   }
 
-  // New method to update ticket status
-  updateTicketStatus(ticketId: number, newStatus: string): void {
-    const ticketToUpdate = this.openTickets.find((ticket) => ticket.id === ticketId);
-
-    if (ticketToUpdate) {
-      ticketToUpdate.status = newStatus;
-
-      this.ticketService.updateTicket(ticketId, ticketToUpdate).subscribe(
-        (updatedTicket) => {
-          // Update successful, you can handle it as needed
-          console.log('Ticket status updated successfully:', updatedTicket);
-        },
-        (error) => {
-          // Handle the error if the update fails
-          console.error('Error updating ticket status:', error);
-        }
-      );
-    }
+  paginate(): void {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    this.displayedTickets = this.filteredTickets.slice(startIndex, endIndex);
   }
+
+  setPage(pageNumber: number): void {
+    this.currentPage = pageNumber;
+    this.paginate();
+  }
+
+  getPages(): number[] {
+    const pageCount = Math.ceil(this.filteredTickets.length / this.itemsPerPage);
+    return new Array(pageCount).fill(0).map((_, index) => index + 1);
+  }
+
 }
