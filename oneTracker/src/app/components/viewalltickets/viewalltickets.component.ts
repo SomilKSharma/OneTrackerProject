@@ -1,44 +1,17 @@
+// viewalltickets.component.ts
 import { Component, OnInit } from '@angular/core';
 import { FilterService } from '../../services/filter.service';
+import { TicketService } from '../../services/ticket.service';
 
 @Component({
   selector: 'app-viewalltickets',
   templateUrl: './viewalltickets.component.html',
-  styleUrls: ['./viewalltickets.component.scss'] 
+  styleUrls: ['./viewalltickets.component.scss'],
 })
 export class ViewallticketsComponent implements OnInit {
-  openTickets = [
-    {
-      id: 1,
-      department: 'IT',
-      category: 'Software',
-      subCategory: 'Bug',
-      status: 'Open',
-      customer: 'John Doe',
-      issueTime: new Date('2023-01-01T10:30:00'),
-      age: 5, 
-      lastModifiedDate: new Date('2023-01-05T15:45:00'),
-      rootCauseAnalysis: 'Pending',
-    },
-    {
-      id: 2,
-      department: 'HR',
-      category: 'Employee Relations',
-      subCategory: 'Conflict Resolution',
-      status: 'In Progress',
-      customer: 'Jane Smith',
-      issueTime: new Date('2023-01-02T08:45:00'),
-      age: 3, 
-      lastModifiedDate: new Date('2023-01-05T11:20:00'),
-      rootCauseAnalysis: 'Completed',
-    },
-    
-  ];
-
-  
+  openTickets: any[] = [];
   filteredTickets: any[] = [];
 
-  
   displayedColumns: string[] = [
     'id',
     'department',
@@ -50,20 +23,46 @@ export class ViewallticketsComponent implements OnInit {
     'age',
     'lastModifiedDate',
     'rootCauseAnalysis',
+    'updateStatus', // New column for updating status
   ];
 
-  constructor(private filterService: FilterService) {}
+  constructor(
+    private filterService: FilterService,
+    private ticketService: TicketService
+  ) {}
 
   ngOnInit(): void {
-    this.filterService.getFilter().subscribe((filter) => {
-      this.filterTickets(filter);
+    this.ticketService.getTickets().subscribe((tickets) => {
+      this.openTickets = tickets;
+      this.filterService.getFilter().subscribe((filter) => {
+        this.filterTickets(filter);
+      });
     });
   }
 
   filterTickets(filter: string): void {
-    
     this.filteredTickets = this.openTickets.filter((ticket) =>
       ticket.customer.toLowerCase().includes(filter.toLowerCase())
     );
+  }
+
+  // New method to update ticket status
+  updateTicketStatus(ticketId: number, newStatus: string): void {
+    const ticketToUpdate = this.openTickets.find((ticket) => ticket.id === ticketId);
+
+    if (ticketToUpdate) {
+      ticketToUpdate.status = newStatus;
+
+      this.ticketService.updateTicket(ticketId, ticketToUpdate).subscribe(
+        (updatedTicket) => {
+          // Update successful, you can handle it as needed
+          console.log('Ticket status updated successfully:', updatedTicket);
+        },
+        (error) => {
+          // Handle the error if the update fails
+          console.error('Error updating ticket status:', error);
+        }
+      );
+    }
   }
 }

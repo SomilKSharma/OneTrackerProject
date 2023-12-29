@@ -30,6 +30,12 @@ server.post('/api/logout', (req, res) => {
     res.status(200).json({ message: 'Logout successful' });
 });
 
+// Custom route for getting all tickets
+server.get('/api/tickets', (req, res) => {
+    const tickets = router.db.get('tickets').value();
+    res.json(tickets);
+});
+
 server.use('/api', router);
 
 const port = 3000;

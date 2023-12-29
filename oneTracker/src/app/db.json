@@ -1,11 +1,188 @@
 {
-    "users": [
-      { "id": 1, "username": "user1", "password": "password1" },
-      { "id": 2, "username": "user2", "password": "password2" }
-    ],
-    "posts": [
-      { "id": 1, "title": "Post 1", "userId": 1 },
-      { "id": 2, "title": "Post 2", "userId": 2 }
-    ]
-  }
-  
+  "users": [
+    { "id": 1, "username": "user1", "password": "password1" },
+    { "id": 2, "username": "user2", "password": "password2" }
+  ],
+  "tickets": [
+    {
+      "id": 1,
+      "department": "IT",
+      "category": "Software",
+      "subCategory": "Bug",
+      "status": "Open",
+      "customer": "John Doe",
+      "issueTime": "2023-01-01T10:30:00",
+      "age": 5,
+      "lastModifiedDate": "2023-01-05T15:45:00",
+      "rootCauseAnalysis": "Pending"
+    },
+    {
+      "id": 2,
+      "department": "HR",
+      "category": "Employee Relations",
+      "subCategory": "Conflict Resolution",
+      "status": "In Progress",
+      "customer": "Jane Smith",
+      "issueTime": "2023-01-02T08:45:00",
+      "age": 3,
+      "lastModifiedDate": "2023-01-05T11:20:00",
+      "rootCauseAnalysis": "Completed"
+    },
+    {
+      "id": 3,
+      "department": "Finance",
+      "category": "Finance Management",
+      "subCategory": "Budget Approval",
+      "status": "Pending",
+      "customer": "Bob Johnson",
+      "issueTime": "2023-01-03T12:15:00",
+      "age": 7,
+      "lastModifiedDate": "2023-01-06T09:30:00",
+      "rootCauseAnalysis": "Pending"
+    },
+    {
+      "id": 4,
+      "department": "Marketing",
+      "category": "Marketing Strategy",
+      "subCategory": "Campaign Planning",
+      "status": "Closed",
+      "customer": "Alice Brown",
+      "issueTime": "2023-01-04T14:00:00",
+      "age": 10,
+      "lastModifiedDate": "2023-01-07T14:45:00",
+      "rootCauseAnalysis": "Completed"
+    },
+    {
+      "id": 5,
+      "department": "IT",
+      "category": "Software",
+      "subCategory": "Feature Request",
+      "status": "Open",
+      "customer": "Eva White",
+      "issueTime": "2023-01-05T09:30:00",
+      "age": 2,
+      "lastModifiedDate": "2023-01-08T16:15:00",
+      "rootCauseAnalysis": "Pending"
+    },
+    {
+      "id": 6,
+      "department": "HR",
+      "category": "Employee Relations",
+      "subCategory": "Training Request",
+      "status": "Open",
+      "customer": "Michael Johnson",
+      "issueTime": "2023-01-06T11:30:00",
+      "age": 4,
+      "lastModifiedDate": "2023-01-09T13:45:00",
+      "rootCauseAnalysis": "Pending"
+    },
+    {
+      "id": 7,
+      "department": "IT",
+      "category": "Software",
+      "subCategory": "Bug",
+      "status": "In Progress",
+      "customer": "Emma Davis",
+      "issueTime": "2023-01-07T14:15:00",
+      "age": 6,
+      "lastModifiedDate": "2023-01-10T10:30:00",
+      "rootCauseAnalysis": "In Progress"
+    },
+    {
+      "id": 8,
+      "department": "Finance",
+      "category": "Expense Management",
+      "subCategory": "Approval Request",
+      "status": "Pending",
+      "customer": "Daniel Wilson",
+      "issueTime": "2023-01-08T09:45:00",
+      "age": 8,
+      "lastModifiedDate": "2023-01-11T14:20:00",
+      "rootCauseAnalysis": "Pending"
+    },
+    {
+      "id": 9,
+      "department": "Marketing",
+      "category": "Campaigns",
+      "subCategory": "Social Media",
+      "status": "Closed",
+      "customer": "Olivia Miller",
+      "issueTime": "2023-01-09T16:30:00",
+      "age": 12,
+      "lastModifiedDate": "2023-01-12T12:45:00",
+      "rootCauseAnalysis": "Completed"
+    },
+    {
+      "id": 10,
+      "department": "IT",
+      "category": "Hardware",
+      "subCategory": "Equipment Request",
+      "status": "Open",
+      "customer": "Sophia Anderson",
+      "issueTime": "2023-01-10T08:15:00",
+      "age": 3,
+      "lastModifiedDate": "2023-01-13T11:30:00",
+      "rootCauseAnalysis": "Pending"
+    },
+    {
+      "id": 11,
+      "department": "HR",
+      "category": "Employee Relations",
+      "subCategory": "Conflict Resolution",
+      "status": "In Progress",
+      "customer": "Liam Taylor",
+      "issueTime": "2023-01-11T12:00:00",
+      "age": 7,
+      "lastModifiedDate": "2023-01-14T15:15:00",
+      "rootCauseAnalysis": "In Progress"
+    },
+    {
+      "id": 12,
+      "department": "Finance",
+      "category": "Finance Management",
+      "subCategory": "Budget Approval",
+      "status": "Pending",
+      "customer": "Ava Garcia",
+      "issueTime": "2023-01-12T10:30:00",
+      "age": 5,
+      "lastModifiedDate": "2023-01-15T09:45:00",
+      "rootCauseAnalysis": "Pending"
+    },
+    {
+      "id": 13,
+      "department": "Marketing",
+      "category": "Marketing Strategy",
+      "subCategory": "Campaign Planning",
+      "status": "Closed",
+      "customer": "Noah Moore",
+      "issueTime": "2023-01-13T14:45:00",
+      "age": 9,
+      "lastModifiedDate": "2023-01-16T14:00:00",
+      "rootCauseAnalysis": "Completed"
+    },
+    {
+      "id": 14,
+      "department": "IT",
+      "category": "Software",
+      "subCategory": "Feature Request",
+      "status": "Open",
+      "customer": "Isabella Martinez",
+      "issueTime": "2023-01-14T11:15:00",
+      "age": 2,
+      "lastModifiedDate": "2023-01-17T16:30:00",
+      "rootCauseAnalysis": "Pending"
+    },
+    {
+      "id": 15,
+      "department": "HR",
+      "category": "Employee Relations",
+      "subCategory": "Training Request",
+      "status": "Open",
+      "customer": "Jackson Davis",
+      "issueTime": "2023-01-15T09:30:00",
+      "age": 4,
+      "lastModifiedDate": "2023-01-18T13:00:00",
+      "rootCauseAnalysis": "Pending"
+    }
+  ]
+}

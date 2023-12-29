@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TicketService {
-  private apiUrl = 'http://localhost:3000'; // Update with your JSON server URL
+  private apiUrl = 'http://localhost:3000/api'; // Update with your JSON server URL
 
   constructor(private http: HttpClient) { }
 
