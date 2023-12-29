@@ -7,17 +7,22 @@ import { DataComponent } from './components/data/data.component';
 import { ViewallticketsComponent } from './components/viewalltickets/viewalltickets.component';
 import { ViewticketComponent } from './components/viewticket/viewticket.component';
 import { EditticketComponent } from './components/editticket/editticket.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   {
-    path: 'dashboard', component: DashboardComponent, children:[
+    path: 'dashboard', 
+    component: DashboardComponent,
+    canActivate: [AuthGuard], // Apply the AuthGuard to the dashboard and its children
+    children: [
       { path: 'addticket', component: AddticketComponent },
       { path: 'data', component: DataComponent },
       { path: 'viewalltickets', component: ViewallticketsComponent },
       { path: 'viewticket', component: ViewticketComponent },
       { path: 'editticket', component: EditticketComponent },
-    ] },
+    ] 
+  },
 ];
 
 @NgModule({

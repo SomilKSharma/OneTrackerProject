@@ -29,7 +29,6 @@ server.post('/api/login', (req, res) => {
 });
 
 server.post('/api/logout', (req, res) => {
-    // Perform any logout logic here
     res.status(200).json({ message: 'Logout successful' });
 });
 

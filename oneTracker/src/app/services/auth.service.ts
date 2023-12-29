@@ -1,9 +1,9 @@
-// src/app/services/auth.service.ts
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -28,11 +28,26 @@ export class AuthService {
   }
 
   logout(): Observable<any> {
-    return this.http.post(`${this.apiUrl}/logout`, {})
+    console.log('Call netgid');
+    const value = this.http.post<any>(`${this.apiUrl}/logout`, {})
       .pipe(
-        tap(() => this.clearAuthToken()),
+        tap(() => {
+          this.clearAuthToken()
+        }),
         catchError(this.handleError<any>('logout'))
-      );
+    );
+    // Subscribe to the observable
+    value.subscribe(
+      data => {
+        // Handle the successful response if needed
+        console.log('Logout successful', data);
+      },
+      error => {
+        // Handle the error if needed
+        console.error('Logout failed', error);
+      }
+    );
+    return value;
   }
 
   isLoggedIn(): boolean {
