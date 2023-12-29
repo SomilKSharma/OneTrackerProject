@@ -16,15 +16,13 @@ server.use(jsonServer.bodyParser);
 // Custom routes for login and logout
 server.post('/api/login', (req, res) => {
     const { username, password } = req.body;
-    console.log(username, password);
-    const user = router.db.get('users').find({ username, password });
+    const user = router.db.get('users').find({ username, password }).value();
     console.log(user);
 
     if (user) {
-        // Assuming you have a function to generate an authentication token
         const token = generateAuthToken(user);
         res.json({ token });
-
+        console.log(token);
     } else {
         res.status(401).json({ error: 'Invalid credentials' });
     }
