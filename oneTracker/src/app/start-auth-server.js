@@ -17,12 +17,10 @@ server.use(jsonServer.bodyParser);
 server.post('/api/login', (req, res) => {
     const { username, password } = req.body;
     const user = router.db.get('users').find({ username, password }).value();
-    console.log(user);
 
     if (user) {
         const token = generateAuthToken(user);
         res.json({ token });
-        console.log(token);
     } else {
         res.status(401).json({ error: 'Invalid credentials' });
     }
