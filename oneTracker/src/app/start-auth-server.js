@@ -66,6 +66,26 @@ server.get('/api/tickets', (req, res) => {
     res.json(tickets);
 });
 
+// Custom route for adding a ticket
+server.post('/api/tickets', (req, res) => {
+    const tickets = router.db.get('tickets').value();
+
+    // Find the maximum ID
+    const maxId = tickets.reduce((max, ticket) => (ticket.id > max ? ticket.id : max), 0);
+
+    // Create a new ticket with an ID one more than the maximum
+    const newTicket = {
+        ...req.body,
+        id: maxId + 1,
+    };
+
+    // Add the new ticket to the database
+    router.db.get('tickets').push(newTicket).write();
+
+    res.json(newTicket);
+});
+
+
 server.use('/api', router);
 
 const port = 3000;

@@ -11,21 +11,24 @@ export class AddticketComponent {
   newTicket = {
     id: 0,
     department: "",
+    "ticketClosedIn4":false,
     category: "",
     subCategory: "",
     status: "",
     customer: "",
-    issueTime: new Date(),
-    age: 0, // in days
-    lastModifiedDate: "",
+    issueTime:new Date(),
+    age: 0, 
+    lastModifiedDate: new Date(),
     rootCauseAnalysis: '',
   };
 
   constructor(private ticketService: TicketService, private router:Router) {}
 
   createTicket(): void {
-    // You may want to validate form data before sending the request
-
+    // Set the issueTime to the current date and time
+    this.newTicket.issueTime = new Date();
+    this.newTicket.lastModifiedDate = new Date();
+    
     this.ticketService.createTicket(this.newTicket).subscribe(
       (createdTicket) => {
         console.log('Ticket created successfully:', createdTicket);

@@ -14,11 +14,12 @@ export class EditticketComponent implements OnInit {
     department: "",
     category: "",
     subCategory: "",
+    "ticketClosedIn4":false,
     status: "",
     customer: "",
     issueTime: new Date(),
     age: 0, // in days
-    lastModifiedDate: "",
+    lastModifiedDate: new Date(),
     rootCauseAnalysis: '',
   }; // Change the type according to your ticket structure
 
@@ -48,6 +49,7 @@ export class EditticketComponent implements OnInit {
   }
 
   updateTicket() {
+    this.ticket.lastModifiedDate = new Date();
     // Update the existing ticket
     this.ticketService.updateTicket(this.ticket.id, this.ticket).subscribe(
       (updatedTicket: any) => {

@@ -37,8 +37,11 @@
                 <!-- Status -->
                 <div class="mt-4">
                     <label for="status" class="text-sm text-gray-500">Status:</label>
-                    <input id="status" [(ngModel)]="newTicket.status" name="status"
+                    <select id="status" [(ngModel)]="newTicket.status" name="status"
                         class="border border-gray-300 p-2 rounded-md w-full" required>
+                        <option value="open" selected>Open</option>
+                        <option value="closed">Closed</option>
+                    </select>
                     <div *ngIf="ticketForm.controls['status']?.invalid && ticketForm.controls['status']?.touched"
                         class="text-red-500">Status is required</div>
                 </div>
@@ -50,33 +53,6 @@
                         class="border border-gray-300 p-2 rounded-md w-full" required>
                     <div *ngIf="ticketForm.controls['customer']?.invalid && ticketForm.controls['customer']?.touched"
                         class="text-red-500">Customer is required</div>
-                </div>
-
-                <!-- Issue Time -->
-                <div class="mt-4">
-                    <label for="issueTime" class="text-sm text-gray-500">Issue Time:</label>
-                    <input id="issueTime" [(ngModel)]="newTicket.issueTime" name="issueTime" type="datetime-local"
-                        class="border border-gray-300 p-2 rounded-md w-full" required>
-                    <div *ngIf="ticketForm.controls['issueTime']?.invalid && ticketForm.controls['issueTime']?.touched"
-                        class="text-red-500">Issue Time is required</div>
-                </div>
-
-                <!-- Age -->
-                <div class="mt-4">
-                    <label for="age" class="text-sm text-gray-500">Age:</label>
-                    <input id="age" [(ngModel)]="newTicket.age" name="age" type="number"
-                        class="border border-gray-300 p-2 rounded-md w-full" required>
-                    <div *ngIf="ticketForm.controls['age']?.invalid && ticketForm.controls['age']?.touched"
-                        class="text-red-500">Age is required</div>
-                </div>
-
-                <!-- Last Modified Date -->
-                <div class="mt-4">
-                    <label for="lastModifiedDate" class="text-sm text-gray-500">Last Modified Date:</label>
-                    <input id="lastModifiedDate" [(ngModel)]="newTicket.lastModifiedDate" name="lastModifiedDate"
-                        type="datetime-local" class="border border-gray-300 p-2 rounded-md w-full" required>
-                    <div *ngIf="ticketForm.controls['lastModifiedDate']?.invalid && ticketForm.controls['lastModifiedDate']?.touched"
-                        class="text-red-500">Last Modified Date is required</div>
                 </div>
 
                 <!-- Root Cause Analysis -->
