@@ -15,6 +15,7 @@
     {
       "id": 1,
       "department": "IT",
+      "ticketClosedIn4":false,
       "category": "Software",
       "subCategory": "Bug",
       "status": "Open",
@@ -27,6 +28,7 @@
     {
       "id": 2,
       "department": "HR",
+      "ticketClosedIn4":false,
       "category": "Employee Relations",
       "subCategory": "Conflict Resolution",
       "status": "In Progress",
@@ -39,6 +41,7 @@
     {
       "id": 3,
       "department": "Finance",
+      "ticketClosedIn4":false,
       "category": "Finance Management",
       "subCategory": "Budget Approval",
       "status": "Pending",
@@ -51,6 +54,7 @@
     {
       "id": 4,
       "department": "Marketing",
+      "ticketClosedIn4":false,
       "category": "Marketing Strategy",
       "subCategory": "Campaign Planning",
       "status": "Closed",
@@ -63,6 +67,7 @@
     {
       "id": 5,
       "department": "IT",
+      "ticketClosedIn4":false,
       "category": "Software",
       "subCategory": "Feature Request",
       "status": "Open",
@@ -75,6 +80,7 @@
     {
       "id": 6,
       "department": "HR",
+      "ticketClosedIn4":false,
       "category": "Employee Relations",
       "subCategory": "Training Request",
       "status": "Open",
@@ -87,6 +93,7 @@
     {
       "id": 7,
       "department": "IT",
+      "ticketClosedIn4":false,
       "category": "Software",
       "subCategory": "Bug",
       "status": "In Progress",
@@ -99,6 +106,7 @@
     {
       "id": 8,
       "department": "Finance",
+      "ticketClosedIn4":false,
       "category": "Expense Management",
       "subCategory": "Approval Request",
       "status": "Pending",
@@ -111,6 +119,7 @@
     {
       "id": 9,
       "department": "Marketing",
+      "ticketClosedIn4":false,
       "category": "Campaigns",
       "subCategory": "Social Media",
       "status": "Closed",
@@ -123,6 +132,7 @@
     {
       "id": 10,
       "department": "IT",
+      "ticketClosedIn4":false,
       "category": "Hardware",
       "subCategory": "Equipment Request",
       "status": "Open",
@@ -135,6 +145,7 @@
     {
       "id": 11,
       "department": "HR",
+      "ticketClosedIn4":false,
       "category": "Employee Relations",
       "subCategory": "Conflict Resolution",
       "status": "In Progress",
@@ -147,6 +158,7 @@
     {
       "id": 12,
       "department": "Finance",
+      "ticketClosedIn4":false,
       "category": "Finance Management",
       "subCategory": "Budget Approval",
       "status": "Pending",
@@ -159,6 +171,7 @@
     {
       "id": 13,
       "department": "Marketing",
+      "ticketClosedIn4":false,
       "category": "Marketing Strategy",
       "subCategory": "Campaign Planning",
       "status": "Closed",
@@ -171,6 +184,7 @@
     {
       "id": 14,
       "department": "IT",
+      "ticketClosedIn4":false,
       "category": "Software",
       "subCategory": "Feature Request",
       "status": "Open",
@@ -183,6 +197,7 @@
     {
       "id": 15,
       "department": "HR",
+      "ticketClosedIn4":false,
       "category": "Employee Relations",
       "subCategory": "Training Request",
       "status": "Open",
@@ -195,6 +210,7 @@
     {
       "id": 16,
       "department": "asd",
+      "ticketClosedIn4":false,
       "category": "asd",
       "subCategory": "",
       "status": "",
@@ -207,6 +223,7 @@
     {
       "id": 17,
       "department": "gsfdgfdsdfg",
+      "ticketClosedIn4":false,
       "category": "fdgdfgdsfgdfgsdfg",
       "subCategory": "sdfg",
       "status": "sdfgs",
@@ -219,6 +236,7 @@
     {
       "id": 18,
       "department": "vsdf",
+      "ticketClosedIn4":false,
       "category": "xcv",
       "subCategory": "xvb",
       "status": "xcvbx",
@@ -231,6 +249,7 @@
     {
       "id": 19,
       "department": "afd",
+      "ticketClosedIn4":false,
       "category": "adsfa",
       "subCategory": "sdf",
       "status": "adsf",
