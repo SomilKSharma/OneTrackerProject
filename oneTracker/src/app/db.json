@@ -32,9 +32,9 @@
       "status": "In Progress",
       "customer": "Jane Smith",
       "issueTime": "2023-01-02T08:45:00",
-      "age": 3,
+      "age": 123,
       "lastModifiedDate": "2023-01-05T11:20:00",
-      "rootCauseAnalysis": "Completed"
+      "rootCauseAnalysis": "ljhnm"
     },
     {
       "id": 3,
@@ -42,7 +42,7 @@
       "category": "Finance Management",
       "subCategory": "Budget Approval",
       "status": "Pending",
-      "customer": "Boob Johnson",
+      "customer": "SRK",
       "issueTime": "2023-01-03T12:15:00",
       "age": 7,
       "lastModifiedDate": "2023-01-06T09:30:00",
@@ -66,11 +66,11 @@
       "category": "Software",
       "subCategory": "Feature Request",
       "status": "Open",
-      "customer": "Eva White",
+      "customer": "Eva Kite",
       "issueTime": "2023-01-05T09:30:00",
-      "age": 2,
+      "age": 12,
       "lastModifiedDate": "2023-01-08T16:15:00",
-      "rootCauseAnalysis": "Pending"
+      "rootCauseAnalysis": "Done"
     },
     {
       "id": 6,

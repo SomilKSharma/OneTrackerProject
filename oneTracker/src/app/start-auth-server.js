@@ -26,6 +26,36 @@ server.post('/api/login', (req, res) => {
     }
 });
 
+// Custom route for getting a specific ticket by ID
+server.get('/api/tickets/:id', (req, res) => {
+    const ticketId = parseInt(req.params.id);
+    const ticket = router.db.get('tickets').find({ id: ticketId }).value();
+
+    if (ticket) {
+        res.json(ticket);
+    } else {
+        res.status(404).json({ error: 'Ticket not found' });
+    }
+});
+
+// Custom route for updating a ticket
+server.put('/api/tickets/:id', (req, res) => {
+    const ticketId = parseInt(req.params.id);
+    const updatedTicket = req.body;
+
+    const existingTicketIndex = router.db
+        .get('tickets')
+        .findIndex((ticket) => ticket.id === ticketId)
+        .value();
+
+    if (existingTicketIndex !== -1) {
+        router.db.get('tickets').splice(existingTicketIndex, 1, updatedTicket).write();
+        res.json(updatedTicket);
+    } else {
+        res.status(404).json({ error: 'Ticket not found' });
+    }
+});
+
 server.post('/api/logout', (req, res) => {
     res.status(200).json({ message: 'Logout successful' });
 });
