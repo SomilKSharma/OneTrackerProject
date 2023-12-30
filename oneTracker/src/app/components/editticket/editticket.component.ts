@@ -1,22 +1,63 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { TicketService } from '../../services/ticket.service';
 
 @Component({
   selector: 'app-editticket',
   templateUrl: './editticket.component.html',
-  styleUrl: './editticket.component.scss'
+  styleUrls: ['./editticket.component.scss']
 })
-export class EditticketComponent {
+export class EditticketComponent implements OnInit {
   editing: boolean = true;
-  ticket = {
-    id: 1,
-    department: 'IT',
-    category: 'Software',
-    subCategory: 'Bug',
-    status: 'Open',
-    customer: 'John Doe',
-    issueTime: new Date('2023-01-01T10:30:00'),
-    age: 5, // in days
-    lastModifiedDate: new Date('2023-01-05T15:45:00'),
-    rootCauseAnalysis: 'Pending',
-  };
+  ticket={
+    id: 0,
+    department: "",
+    category: "",
+    subCategory: "",
+    status: "",
+    customer: "",
+    issueTime: new Date(),
+    age: 0, // in days
+    lastModifiedDate: "",
+    rootCauseAnalysis: '',
+  }; // Change the type according to your ticket structure
+
+  constructor(private route: ActivatedRoute, private ticketService: TicketService) {}
+
+  ngOnInit() {
+    // Retrieve the 'id' parameter from the route
+    this.route.paramMap.subscribe(params => {
+      const ticketId = parseInt(params.get('id')!);
+
+      // Fetch ticket details using the TicketService
+      this.fetchTicket(ticketId);
+    });
+  }
+
+  fetchTicket(ticketId: number) {
+    // Use the TicketService to fetch the ticket details
+    this.ticketService.getTicketById(ticketId).subscribe(
+      (response: any) => {
+        console.log(this.ticket);
+        this.ticket = response; // Assuming your API returns the ticket details
+      },
+      (error) => {
+        console.error('Error fetching ticket:', error);
+      }
+    );
+  }
+
+  updateTicket() {
+    // Update the existing ticket
+    this.ticketService.updateTicket(this.ticket.id, this.ticket).subscribe(
+      (updatedTicket: any) => {
+        console.log('Ticket updated successfully:', updatedTicket);
+        // Handle success, e.g., show a success message or navigate to another page
+      },
+      (error) => {
+        console.error('Error updating ticket:', error);
+        // Handle error, e.g., show an error message
+      }
+    );
+  }
 }

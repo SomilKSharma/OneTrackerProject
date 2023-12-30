@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FilterService } from '../../services/filter.service';
 import { TicketService } from '../../services/ticket.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-viewalltickets',
@@ -31,7 +32,8 @@ export class ViewallticketsComponent implements OnInit {
 
   constructor(
     private filterService: FilterService,
-    private ticketService: TicketService
+    private ticketService: TicketService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -66,5 +68,9 @@ export class ViewallticketsComponent implements OnInit {
     const pageCount = Math.ceil(this.filteredTickets.length / this.itemsPerPage);
     return new Array(pageCount).fill(0).map((_, index) => index + 1);
   }
+
+  editTicket(ticketId: number) {
+    this.router.navigate(['/dashboard', 'editticket', ticketId]);
+}
 
 }

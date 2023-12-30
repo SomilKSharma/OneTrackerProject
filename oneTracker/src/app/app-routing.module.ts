@@ -20,7 +20,7 @@ const routes: Routes = [
       { path: 'data', component: DataComponent },
       { path: 'viewalltickets', component: ViewallticketsComponent },
       { path: 'viewticket', component: ViewticketComponent },
-      { path: 'editticket', component: EditticketComponent },
+      { path: 'editticket/:id', component: EditticketComponent },
     ] 
   },
 ];

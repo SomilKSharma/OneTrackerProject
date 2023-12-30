@@ -14,7 +14,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let ticket of displayedTickets">
+        <tr class="cursor-pointer" *ngFor="let ticket of displayedTickets" (click)="editTicket(ticket.id)">
             <td class="border text-xl px-4 py-2">{{ ticket.id }}</td>
             <td class="border text-xl px-4 py-2">{{ ticket.department }}</td>
             <td class="border text-xl px-4 py-2">{{ ticket.category }}</td>
