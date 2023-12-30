@@ -41,11 +41,11 @@
       "department": "Finance",
       "category": "Finance Management",
       "subCategory": "Budget Approval",
-      "status": "Open",
+      "status": "closed",
       "customer": "SRK",
       "issueTime": "2023-01-03T12:15:00",
-      "age": 360,
-      "lastModifiedDate": "2023-01-06T09:30:00",
+      "age": 8663,
+      "lastModifiedDate": "2023-12-30T06:28:34.188Z",
       "rootCauseAnalysis": "Pending"
     },
     {
@@ -80,7 +80,7 @@
       "status": "Open",
       "customer": "Michael Johnson",
       "issueTime": "2023-01-06T11:30:00",
-      "age": 358,
+      "age": 8592,
       "lastModifiedDate": "2023-01-09T13:45:00",
       "rootCauseAnalysis": "Pending"
     },
@@ -92,7 +92,7 @@
       "status": "Open",
       "customer": "Emma Davis",
       "issueTime": "2023-01-07T14:15:00",
-      "age": 356,
+      "age": 8565,
       "lastModifiedDate": "2023-01-10T10:30:00",
       "rootCauseAnalysis": "In Progress"
     },
@@ -104,7 +104,7 @@
       "status": "Open",
       "customer": "Daniel Wilson",
       "issueTime": "2023-01-08T09:45:00",
-      "age": 356,
+      "age": 8546,
       "lastModifiedDate": "2023-01-11T14:20:00",
       "rootCauseAnalysis": "Pending"
     },
@@ -116,7 +116,7 @@
       "status": "Open",
       "customer": "Olivia Miller",
       "issueTime": "2023-01-09T16:30:00",
-      "age": 354,
+      "age": 8515,
       "lastModifiedDate": "2023-01-12T12:45:00",
       "rootCauseAnalysis": "Completed"
     },
@@ -128,7 +128,7 @@
       "status": "Open",
       "customer": "Sophia Anderson",
       "issueTime": "2023-01-10T08:15:00",
-      "age": 354,
+      "age": 8499,
       "lastModifiedDate": "2023-01-13T11:30:00",
       "rootCauseAnalysis": "Pending"
     },
@@ -140,7 +140,7 @@
       "status": "Open",
       "customer": "Liam Taylor",
       "issueTime": "2023-01-11T12:00:00",
-      "age": 352,
+      "age": 8472,
       "lastModifiedDate": "2023-01-14T15:15:00",
       "rootCauseAnalysis": "In Progress"
     },
@@ -152,7 +152,7 @@
       "status": "Open",
       "customer": "Ava Garcia",
       "issueTime": "2023-01-12T10:30:00",
-      "age": 352,
+      "age": 8449,
       "lastModifiedDate": "2023-01-15T09:45:00",
       "rootCauseAnalysis": "Pending"
     },
@@ -164,7 +164,7 @@
       "status": "Open",
       "customer": "Noah Moore",
       "issueTime": "2023-01-13T14:45:00",
-      "age": 350,
+      "age": 8421,
       "lastModifiedDate": "2023-01-16T14:00:00",
       "rootCauseAnalysis": "Completed"
     },
@@ -176,7 +176,7 @@
       "status": "Open",
       "customer": "Isabella Martinez",
       "issueTime": "2023-01-14T11:15:00",
-      "age": 350,
+      "age": 8400,
       "lastModifiedDate": "2023-01-17T16:30:00",
       "rootCauseAnalysis": "Pending"
     },
@@ -188,7 +188,7 @@
       "status": "Open",
       "customer": "Jackson Davis",
       "issueTime": "2023-01-15T09:30:00",
-      "age": 349,
+      "age": 8378,
       "lastModifiedDate": "2023-01-18T13:00:00",
       "rootCauseAnalysis": "Pending"
     },
@@ -200,7 +200,7 @@
       "status": "Open",
       "customer": "",
       "issueTime": "2023-12-29T12:54:58.964Z",
-      "age": 0,
+      "age": 17,
       "lastModifiedDate": "",
       "rootCauseAnalysis": ""
     },
@@ -212,7 +212,7 @@
       "status": "Open",
       "customer": "dfg",
       "issueTime": "2023-12-30T18:38",
-      "age": -1,
+      "age": -7,
       "lastModifiedDate": "2023-12-30T18:39",
       "rootCauseAnalysis": "hfds"
     },
@@ -224,7 +224,7 @@
       "status": "Open",
       "customer": "vcb",
       "issueTime": "2023-12-16T18:40",
-      "age": 13,
+      "age": 329,
       "lastModifiedDate": "2023-12-30T18:40",
       "rootCauseAnalysis": "fd"
     },
@@ -236,7 +236,7 @@
       "status": "Open",
       "customer": "adsf",
       "issueTime": "2023-12-23T18:42",
-      "age": 6,
+      "age": 161,
       "lastModifiedDate": "2024-01-06T18:42",
       "rootCauseAnalysis": "asdf"
     },
@@ -249,7 +249,7 @@
       "status": "Open",
       "customer": "ads",
       "issueTime": "2023-12-29T09:13",
-      "age": 1,
+      "age": 26,
       "lastModifiedDate": "2024-01-26T09:13",
       "rootCauseAnalysis": "asdf"
     },
@@ -262,7 +262,7 @@
       "status": "Open",
       "customer": "asdf",
       "issueTime": "2023-12-30T04:04:26.396Z",
-      "age": 0,
+      "age": 2,
       "lastModifiedDate": "2023-12-30T04:04:26.396Z",
       "rootCauseAnalysis": "asdf"
     },
@@ -275,7 +275,7 @@
       "status": "Open",
       "customer": "HI",
       "issueTime": "2023-12-30T04:15:54.456Z",
-      "age": 0,
+      "age": 2,
       "lastModifiedDate": "2023-12-30T04:15:54.456Z",
       "rootCauseAnalysis": "HI"
     },
@@ -288,7 +288,7 @@
       "status": "Open",
       "customer": "asd",
       "issueTime": "2023-12-30T04:18:44.434Z",
-      "age": 0,
+      "age": 2,
       "lastModifiedDate": "2023-12-30T04:18:44.434Z",
       "rootCauseAnalysis": "asd"
     },

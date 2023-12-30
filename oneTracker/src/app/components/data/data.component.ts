@@ -1,27 +1,38 @@
-import { Component } from '@angular/core';
+// data.component.ts
+import { Component, OnInit } from '@angular/core';
+import { TicketService } from '../../services/ticket.service';
 
 @Component({
   selector: 'app-data',
   templateUrl: './data.component.html',
-  styleUrls: ['./data.component.scss']
+  styleUrls: ['./data.component.scss'],
 })
-export class DataComponent {
-  // Dummy data for rectangular tickets
-  totalTickets: number = 100;
-  openTickets: number = 25;
-  ticketsClosedIn4Hrs: number = 40;
-  ticketsClosedAfter4Hrs: number = 35;
+export class DataComponent implements OnInit {
+  totalTickets: number = 0;
+  openTickets: number = 0;
+  closedIn4Hrs: number = 0;
+  closedAfter4Hrs: number = 0;
 
-  // Dummy data for the table
-  dataSource: any[] = [
-    { ticketNumber: 1, monday: 10, tuesday: 15, wednesday: 20, thursday: 18, friday: 25 },
-    { ticketNumber: 2, monday: 8, tuesday: 12, wednesday: 15, thursday: 22, friday: 30 },
-    // Add more rows as needed
-  ];
+  constructor(private ticketService: TicketService) {}
 
-  displayedColumns: string[] = ['ticketNumber', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+  ngOnInit(): void {
+    this.fetchTicketData();
+  }
 
-  constructor() {
-    // Add any additional initialization logic here
+  fetchTicketData(): void {
+    this.ticketService.getTickets().subscribe((tickets) => {
+      this.totalTickets = tickets.length;
+      this.openTickets = tickets.filter((ticket) => ticket.status.toLowerCase() === 'open').length;
+      this.closedIn4Hrs = tickets.filter((ticket) => this.isClosedIn4Hrs(ticket)).length;
+      this.closedAfter4Hrs = tickets.filter((ticket) => this.isClosedAfter4Hrs(ticket)).length;
+    });
+  }
+
+  private isClosedIn4Hrs(ticket: any): boolean {
+    return ticket.status.toLowerCase() === 'closed' && ticket.age <= 4;
+  }
+
+  private isClosedAfter4Hrs(ticket: any): boolean {
+    return ticket.status.toLowerCase() === 'closed' && ticket.age > 4;
   }
 }

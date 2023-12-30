@@ -71,7 +71,7 @@ export class ViewallticketsComponent implements OnInit {
 
     this.openTickets.forEach((ticket) => {
       const issueTime = new Date(ticket.issueTime);
-      const ageInDays = Math.floor((currentTime.getTime() - issueTime.getTime()) / (1000 * 60 * 60 * 24));
+      const ageInDays = Math.floor((currentTime.getTime() - issueTime.getTime()) / (1000 * 60 * 60 ));
       ticket.age = ageInDays;
     });
   }
