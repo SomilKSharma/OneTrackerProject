@@ -33,25 +33,28 @@ export class ViewallticketsComponent implements OnInit {
   constructor(
     private filterService: FilterService,
     private ticketService: TicketService,
-    private router:Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
+    this.fetchOpenTickets();
+    this.filterService.getFilter().subscribe((filter) => {
+      this.filterTickets(filter);
+    });
+  }
+
+  fetchOpenTickets(): void {
     this.ticketService.getTickets().subscribe((tickets) => {
-      this.openTickets = tickets;
-      this.updateTicketAges(); // Call function to update ticket ages
+      this.openTickets = tickets.filter((ticket) => ticket.status.toLowerCase() === 'open');
+      this.updateTicketAges();
       this.updateDatabase();
-      this.filterService.getFilter().subscribe((filter) => {
-        this.filterTickets(filter);
-        this.paginate(); // Call paginate after fetching tickets
-      });
+      this.filterTickets(''); // Apply initial filtering
     });
   }
 
   updateDatabase(): void {
-    // Assuming this.filteredTickets is the array containing the filtered tickets
     this.openTickets.forEach((ticket) => {
-      const updatedData = { ...ticket, id: ticket.id }; // Include id explicitly
+      const updatedData = { ...ticket, id: ticket.id };
       this.ticketService.updateTicket(ticket.id, updatedData).subscribe(
         (response) => {
           console.log(`Ticket ${ticket.id} updated successfully`);
@@ -62,7 +65,6 @@ export class ViewallticketsComponent implements OnInit {
       );
     });
   }
-  
 
   updateTicketAges(): void {
     const currentTime = new Date();
@@ -75,10 +77,12 @@ export class ViewallticketsComponent implements OnInit {
   }
 
   filterTickets(filter: string): void {
-    this.filteredTickets = this.openTickets.filter((ticket) =>
-      ticket.customer.toLowerCase().includes(filter.toLowerCase())
+    this.currentPage = 1; // Reset current page when filtering
+    this.filteredTickets = this.openTickets.filter(
+      (ticket) =>
+        ticket.customer.toLowerCase().includes(filter.toLowerCase())
     );
-    this.paginate(); // Call paginate after fetching tickets
+    this.paginate();
   }
 
   paginate(): void {
@@ -99,6 +103,5 @@ export class ViewallticketsComponent implements OnInit {
 
   editTicket(ticketId: number) {
     this.router.navigate(['/dashboard', 'editticket', ticketId]);
-}
-
+  }
 }
