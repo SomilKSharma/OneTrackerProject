@@ -53,11 +53,11 @@
       "department": "Marketing",
       "category": "Marketing Strategy",
       "subCategory": "Campaign Planning",
-      "status": "Open",
+      "status": "closed",
       "customer": "Alie Brown",
       "issueTime": "2023-01-04T14:00:00",
       "age": 359,
-      "lastModifiedDate": "2023-01-07T14:45:00",
+      "lastModifiedDate": "2023-12-30T06:10:04.390Z",
       "rootCauseAnalysis": "Completed"
     },
     {
@@ -304,6 +304,19 @@
       "age": 0,
       "lastModifiedDate": "2023-12-30T06:05:37.643Z",
       "rootCauseAnalysis": "khgvj"
+    },
+    {
+      "id": 25,
+      "department": "gsdfg",
+      "ticketClosedIn4": false,
+      "category": "sdfgasdfa",
+      "subCategory": "sdf",
+      "status": "open",
+      "customer": "fasdfa",
+      "issueTime": "2023-12-30T06:08:23.443Z",
+      "age": 0,
+      "lastModifiedDate": "2023-12-30T06:08:23.443Z",
+      "rootCauseAnalysis": "sdf"
     }
   ]
 }

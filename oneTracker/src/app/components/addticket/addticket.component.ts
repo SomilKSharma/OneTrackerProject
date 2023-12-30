@@ -33,8 +33,9 @@ export class AddticketComponent {
       (createdTicket) => {
         console.log('Ticket created successfully:', createdTicket);
         // Optionally, you can redirect to a different page or perform other actions
-        this.router.navigate(['/dashboard/viewalltickets'])
-      },
+        setTimeout(() => {
+          this.router.navigate(['/dashboard/viewalltickets']);
+        }, 500);      },
       (error) => {
         console.error('Error creating ticket:', error);
       }

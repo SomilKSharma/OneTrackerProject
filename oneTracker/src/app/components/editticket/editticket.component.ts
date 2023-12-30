@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TicketService } from '../../services/ticket.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editticket',
@@ -23,7 +24,7 @@ export class EditticketComponent implements OnInit {
     rootCauseAnalysis: '',
   }; // Change the type according to your ticket structure
 
-  constructor(private route: ActivatedRoute, private ticketService: TicketService) {}
+  constructor(private route: ActivatedRoute, private ticketService: TicketService, private router:Router) {}
 
   ngOnInit() {
     // Retrieve the 'id' parameter from the route
@@ -39,7 +40,6 @@ export class EditticketComponent implements OnInit {
     // Use the TicketService to fetch the ticket details
     this.ticketService.getTicketById(ticketId).subscribe(
       (response: any) => {
-        console.log(this.ticket);
         this.ticket = response; // Assuming your API returns the ticket details
       },
       (error) => {
@@ -54,6 +54,9 @@ export class EditticketComponent implements OnInit {
     this.ticketService.updateTicket(this.ticket.id, this.ticket).subscribe(
       (updatedTicket: any) => {
         console.log('Ticket updated successfully:', updatedTicket);
+        setTimeout(() => {
+          this.router.navigate(['/dashboard/viewalltickets']);
+        }, 500); 
         // Handle success, e.g., show a success message or navigate to another page
       },
       (error) => {
