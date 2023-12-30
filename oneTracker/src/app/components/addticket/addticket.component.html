@@ -11,7 +11,8 @@
                 <div class="mt-4">
                     <label for="department" class="text-sm text-gray-500">Department:</label>
                     <input id="department" [(ngModel)]="newTicket.department" name="department"
-                        class="border border-gray-300 p-2 rounded-md w-full" required>
+                        class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:border-blue-500"
+                        required>
                     <div *ngIf="ticketForm.controls['department']?.invalid && ticketForm.controls['department']?.touched"
                         class="text-red-500">Department is required</div>
                 </div>
@@ -20,7 +21,8 @@
                 <div class="mt-4">
                     <label for="category" class="text-sm text-gray-500">Category:</label>
                     <input id="category" [(ngModel)]="newTicket.category" name="category"
-                        class="border border-gray-300 p-2 rounded-md w-full" required>
+                        class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:border-blue-500"
+                        required>
                     <div *ngIf="ticketForm.controls['category']?.invalid && ticketForm.controls['category']?.touched"
                         class="text-red-500">Category is required</div>
                 </div>
@@ -29,7 +31,8 @@
                 <div class="mt-4">
                     <label for="subCategory" class="text-sm text-gray-500">Sub-Category:</label>
                     <input id="subCategory" [(ngModel)]="newTicket.subCategory" name="subCategory"
-                        class="border border-gray-300 p-2 rounded-md w-full" required>
+                        class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:border-blue-500"
+                        required>
                     <div *ngIf="ticketForm.controls['subCategory']?.invalid && ticketForm.controls['subCategory']?.touched"
                         class="text-red-500">Sub-Category is required</div>
                 </div>
@@ -38,7 +41,8 @@
                 <div class="mt-4">
                     <label for="status" class="text-sm text-gray-500">Status:</label>
                     <select id="status" [(ngModel)]="newTicket.status" name="status"
-                        class="border border-gray-300 p-2 rounded-md w-full" required>
+                        class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:border-blue-500"
+                        required>
                         <option value="open" selected>Open</option>
                         <option value="closed">Closed</option>
                     </select>
@@ -50,7 +54,8 @@
                 <div class="mt-4">
                     <label for="customer" class="text-sm text-gray-500">Customer:</label>
                     <input id="customer" [(ngModel)]="newTicket.customer" name="customer"
-                        class="border border-gray-300 p-2 rounded-md w-full" required>
+                        class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:border-blue-500"
+                        required>
                     <div *ngIf="ticketForm.controls['customer']?.invalid && ticketForm.controls['customer']?.touched"
                         class="text-red-500">Customer is required</div>
                 </div>
@@ -59,7 +64,8 @@
                 <div class="mt-4">
                     <label for="rootCauseAnalysis" class="text-sm text-gray-500">Root Cause Analysis:</label>
                     <input id="rootCauseAnalysis" [(ngModel)]="newTicket.rootCauseAnalysis" name="rootCauseAnalysis"
-                        class="border border-gray-300 p-2 rounded-md w-full" required>
+                        class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:border-blue-500"
+                        required>
                     <div *ngIf="ticketForm.controls['rootCauseAnalysis']?.invalid && ticketForm.controls['rootCauseAnalysis']?.touched"
                         class="text-red-500">Root Cause Analysis is required</div>
                 </div>
@@ -68,12 +74,11 @@
             <!-- Save and Cancel buttons -->
             <div class="flex justify-between items-center mt-8">
                 <button type="submit" [style.background-color]="ticketForm.valid ? '#2196f3' : 'gray'"
-                    [disabled]="!ticketForm.valid" class="text-white rounded px-4 py-2 hover:bg-blue-600">
+                    [disabled]="!ticketForm.valid"
+                    class="text-white rounded px-4 py-2 transition duration-300 ease-in-out transform hover:scale-105">
                     Save
                 </button>
             </div>
-
-
         </form>
     </div>
 </div>
