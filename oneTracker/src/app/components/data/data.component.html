@@ -1,31 +1,29 @@
 <!-- data.component.html -->
 
 <div class="container mx-auto p-8">
-    <h1 class="text-2xl font-bold mb-4">Dashboard</h1>
+    <h1 class="mat-h1 font-bold mb-4">Dashboard</h1>
 
     <!-- Rectangular tickets with animations -->
-    <div class="grid cursor-pointer grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        <div class="bg-gray-200 p-4 rounded-md shadow-md transform transition hover:scale-105 hover:shadow-lg">
-            <h2 class="text-xl font-semibold mb-2">Total Tickets 🎟️</h2>
-            <p class="text-2xl font-bold">{{ totalTickets }}</p>
+    <div class="mat-elevation-z8 grid grid-cols-2 gap-4 mb-8">
+        <div class="mat-card p-4 bg-gray-200 rounded-md shadow-md transform transition hover:scale-105 hover:shadow-lg">
+            <h2 class="mat-h2 font-semibold mb-2">Total Tickets 🎟️</h2>
+            <p class="mat-body-1 font-bold">{{ totalTickets }}</p>
+        </div>
+
+        <div class="mat-card p-4 bg-blue-200 rounded-md shadow-md transform transition hover:scale-105 hover:shadow-lg">
+            <h2 class="mat-h2 font-semibold mb-2">Open Tickets 🔓</h2>
+            <p class="mat-body-1 font-bold">{{ openTickets }}</p>
         </div>
 
         <div
-            class="bg-blue-200 p-4 cursor-pointer  rounded-md shadow-md transform transition hover:scale-105 hover:shadow-lg">
-            <h2 class="text-xl font-semibold mb-2">Open Tickets 🔓</h2>
-            <p class="text-2xl font-bold">{{ openTickets }}</p>
+            class="mat-card p-4 bg-green-200 rounded-md shadow-md transform transition hover:scale-105 hover:shadow-lg">
+            <h2 class="mat-h2 font-semibold mb-2">Tickets Closed in 4 Hrs 🔐</h2>
+            <p class="mat-body-1 font-bold">{{ closedIn4Hrs }}</p>
         </div>
 
-        <div
-            class="bg-green-200 p-4 cursor-pointer  rounded-md shadow-md transform transition hover:scale-105 hover:shadow-lg">
-            <h2 class="text-xl font-semibold mb-2">Tickets Closed in 4 Hrs 🔐</h2>
-            <p class="text-2xl font-bold">{{ closedIn4Hrs }}</p>
-        </div>
-
-        <div
-            class="bg-red-200 p-4 cursor-pointer rounded-md shadow-md transform transition hover:scale-105 hover:shadow-lg">
-            <h2 class="text-xl font-semibold mb-2">Tickets Closed After 4 Hrs 🔐</h2>
-            <p class="text-2xl font-bold">{{ closedAfter4Hrs }}</p>
+        <div class="mat-card p-4 bg-red-200 rounded-md shadow-md transform transition hover:scale-105 hover:shadow-lg">
+            <h2 class="mat-h2 font-semibold mb-2">Tickets Closed After 4 Hrs 🔐</h2>
+            <p class="mat-body-1 font-bold">{{ closedAfter4Hrs }}</p>
         </div>
     </div>
 </div>

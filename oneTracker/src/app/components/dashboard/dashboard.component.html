@@ -2,22 +2,15 @@
 
 <div class="bg-white text-black p-4">
     <div class="flex border p-2 items-center">
-        <a routerLink="/dashboard/viewalltickets"
-            class="text-2xl mr-4 hover:text-blue-500 transition duration-300 ease-in-out transform hover:scale-105">Dashboard</a>
-        <a routerLink="/dashboard/addticket"
-            class="text-2xl mr-4 hover:text-blue-500 transition duration-300 ease-in-out transform hover:scale-105">Add
-            Ticket</a>
-        <a routerLink="/dashboard/data"
-            class="text-2xl mr-4 hover:text-blue-500 transition duration-300 ease-in-out transform hover:scale-105">Report</a>
-        <a routerLink="/dashboard/rootcause"
-            class="text-2xl hover:text-blue-500 transition duration-300 ease-in-out transform hover:scale-105">Root
-            Cause Analysis</a>
+        <a mat-button routerLink="/dashboard/viewalltickets">Dashboard</a>
+        <a mat-button routerLink="/dashboard/addticket">Add Ticket</a>
+        <a mat-button routerLink="/dashboard/data">Report</a>
+        <a mat-button routerLink="/dashboard/rootcause">Root Cause Analysis</a>
         <div class="ml-auto" *ngIf="isViewAllTicketsActive()">
-            <div class="relative">
-                <input type="text" placeholder="Search Name"
-                    class="py-2 text-2xl px-4 rounded bg-blue-500 text-white focus:outline-none focus:ring focus:ring-blue-200 transition duration-300 ease-in-out transform hover:scale-105"
-                    (input)="applyFilter($event)" />
-            </div>
+            <mat-form-field appearance="fill">
+                <mat-label>Search Name</mat-label>
+                <input matInput placeholder="Search Name" (input)="applyFilter($event)" />
+            </mat-form-field>
         </div>
     </div>
 </div>

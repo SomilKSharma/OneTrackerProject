@@ -1,40 +1,27 @@
 <!-- Displaying Tickets Table -->
-<table class="table-auto w-full mb-8">
-    <thead>
-        <tr class="border bg-gray-200">
-            <th class="px-4 py-2 text-lg">ID</th>
-            <th class="px-4 py-2 text-lg">Department</th>
-            <th class="px-4 py-2 text-lg">Category</th>
-            <th class="px-4 py-2 text-lg">Sub-Category</th>
-            <th class="px-4 py-2 text-lg">Status</th>
-            <th class="px-4 py-2 text-lg">Customer</th>
-            <th class="px-4 py-2 text-lg">Issue Time</th>
-            <th class="px-4 py-2 text-lg">Age</th>
-            <th class="px-4 py-2 text-lg">Last Modified</th>
-            <th class="px-4 py-2 text-lg">Root Cause Analysis</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
-            *ngFor="let ticket of displayedTickets" (click)="editTicket(ticket.id)">
-            <td class="border px-4 py-2">{{ ticket.id }}</td>
-            <td class="border px-4 py-2">{{ ticket.department }}</td>
-            <td class="border px-4 py-2">{{ ticket.category }}</td>
-            <td class="border px-4 py-2">{{ ticket.subCategory }}</td>
-            <td class="border px-4 py-2">{{ ticket.status }}</td>
-            <td class="border px-4 py-2">{{ ticket.customer }}</td>
-            <td class="border px-4 py-2">{{ ticket.issueTime | date: 'short' }}</td>
-            <td class="border px-4 py-2">{{ ticket.age }} Hours</td>
-            <td class="border px-4 py-2">{{ ticket.lastModifiedDate | date: 'short' }}</td>
-            <td class="border px-4 py-2">{{ ticket.rootCauseAnalysis }}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="displayedTickets" matSort class="w-full">
 
-<!-- Pagination -->
-<div class="pagination flex justify-center mt-4">
-    <button *ngFor="let page of getPages()" (click)="setPage(page)" [class.active]="page === currentPage"
-        class="px-3 py-1 mx-1 text-sm leading-tight bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none focus:shadow-outline-blue active:bg-gray-400 transition duration-300 ease-in-out transform hover:scale-105">
-        {{ page }}
-    </button>
+        <!-- Columns -->
+        <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header
+                class="p-3 text-black text-lg hover:underline  transition">
+                {{ column | titlecase }}
+            </th>
+            <td mat-cell *matCellDef="let ticket" class="p-3 bg-blue-100 text-lg">{{ ticket[column] }}</td>
+        </ng-container>
+
+        <!-- Header Row -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns" class="bg-blue-700 text-white"></tr>
+
+        <!-- Data Row -->
+        <tr class="cursor-pointer hover:bg-blue-200 transition" mat-row *matRowDef="let row; columns: displayedColumns;"
+            (click)="editTicket(row.id)">
+        </tr>
+    </table>
+
+    <!-- Paginator -->
+    <mat-paginator [pageSize]="itemsPerPage" [pageIndex]="currentPage - 1" [length]="displayedTickets.data.length"
+        [pageSizeOptions]="[5, 10, 25]">
+    </mat-paginator>
 </div>

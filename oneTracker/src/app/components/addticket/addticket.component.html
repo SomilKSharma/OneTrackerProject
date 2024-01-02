@@ -3,79 +3,78 @@
         <form #ticketForm="ngForm" (ngSubmit)="createTicket()" novalidate>
 
             <div class="text-center mb-6">
-                <h2 class="text-3xl font-bold text-blue-500">Create New Ticket</h2>
+                <h2 class="mat-h2 font-bold text-blue-500">Create New Ticket</h2>
             </div>
 
             <div class="mb-6">
+
                 <!-- Department -->
-                <div class="mt-4">
-                    <label for="department" class="text-sm text-gray-500">Department:</label>
-                    <input id="department" [(ngModel)]="newTicket.department" name="department"
-                        class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:border-blue-500"
-                        required>
-                    <div *ngIf="ticketForm.controls['department']?.invalid && ticketForm.controls['department']?.touched"
-                        class="text-red-500">Department is required</div>
-                </div>
+                <mat-form-field class="mt-4 w-full">
+                    <mat-label>Department:</mat-label>
+                    <input matInput [(ngModel)]="newTicket.department" name="department" required>
+                    <mat-error
+                        *ngIf="ticketForm.controls['department']?.invalid && ticketForm.controls['department']?.touched">
+                        Department is required
+                    </mat-error>
+                </mat-form-field>
 
                 <!-- Category -->
-                <div class="mt-4">
-                    <label for="category" class="text-sm text-gray-500">Category:</label>
-                    <input id="category" [(ngModel)]="newTicket.category" name="category"
-                        class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:border-blue-500"
-                        required>
-                    <div *ngIf="ticketForm.controls['category']?.invalid && ticketForm.controls['category']?.touched"
-                        class="text-red-500">Category is required</div>
-                </div>
+                <mat-form-field class="mt-4 w-full">
+                    <mat-label>Category:</mat-label>
+                    <input matInput [(ngModel)]="newTicket.category" name="category" required>
+                    <mat-error
+                        *ngIf="ticketForm.controls['category']?.invalid && ticketForm.controls['category']?.touched">
+                        Category is required
+                    </mat-error>
+                </mat-form-field>
 
                 <!-- Sub-Category -->
-                <div class="mt-4">
-                    <label for="subCategory" class="text-sm text-gray-500">Sub-Category:</label>
-                    <input id="subCategory" [(ngModel)]="newTicket.subCategory" name="subCategory"
-                        class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:border-blue-500"
-                        required>
-                    <div *ngIf="ticketForm.controls['subCategory']?.invalid && ticketForm.controls['subCategory']?.touched"
-                        class="text-red-500">Sub-Category is required</div>
-                </div>
+                <mat-form-field class="mt-4 w-full">
+                    <mat-label>Sub-Category:</mat-label>
+                    <input matInput [(ngModel)]="newTicket.subCategory" name="subCategory" required>
+                    <mat-error
+                        *ngIf="ticketForm.controls['subCategory']?.invalid && ticketForm.controls['subCategory']?.touched">
+                        Sub-Category is required
+                    </mat-error>
+                </mat-form-field>
 
                 <!-- Status -->
-                <div class="mt-4">
-                    <label for="status" class="text-sm text-gray-500">Status:</label>
-                    <select id="status" [(ngModel)]="newTicket.status" name="status"
-                        class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:border-blue-500"
-                        required>
-                        <option value="open" selected>Open</option>
-                        <option value="closed">Closed</option>
-                    </select>
-                    <div *ngIf="ticketForm.controls['status']?.invalid && ticketForm.controls['status']?.touched"
-                        class="text-red-500">Status is required</div>
-                </div>
+                <mat-form-field class="mt-4 w-full">
+                    <mat-label>Status:</mat-label>
+                    <mat-select [(ngModel)]="newTicket.status" name="status" required>
+                        <mat-option value="Open">Open</mat-option>
+                        <mat-option value="Closed">Closed</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="ticketForm.controls['status']?.invalid && ticketForm.controls['status']?.touched">
+                        Status is required
+                    </mat-error>
+                </mat-form-field>
 
                 <!-- Customer -->
-                <div class="mt-4">
-                    <label for="customer" class="text-sm text-gray-500">Customer:</label>
-                    <input id="customer" [(ngModel)]="newTicket.customer" name="customer"
-                        class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:border-blue-500"
-                        required>
-                    <div *ngIf="ticketForm.controls['customer']?.invalid && ticketForm.controls['customer']?.touched"
-                        class="text-red-500">Customer is required</div>
-                </div>
+                <mat-form-field class="mt-4 w-full">
+                    <mat-label>Customer:</mat-label>
+                    <input matInput [(ngModel)]="newTicket.customer" name="customer" required>
+                    <mat-error
+                        *ngIf="ticketForm.controls['customer']?.invalid && ticketForm.controls['customer']?.touched">
+                        Customer is required
+                    </mat-error>
+                </mat-form-field>
 
                 <!-- Root Cause Analysis -->
-                <div class="mt-4">
-                    <label for="rootCauseAnalysis" class="text-sm text-gray-500">Root Cause Analysis:</label>
-                    <input id="rootCauseAnalysis" [(ngModel)]="newTicket.rootCauseAnalysis" name="rootCauseAnalysis"
-                        class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:border-blue-500"
-                        required>
-                    <div *ngIf="ticketForm.controls['rootCauseAnalysis']?.invalid && ticketForm.controls['rootCauseAnalysis']?.touched"
-                        class="text-red-500">Root Cause Analysis is required</div>
-                </div>
+                <mat-form-field class="mt-4 w-full">
+                    <mat-label>Root Cause Analysis:</mat-label>
+                    <input matInput [(ngModel)]="newTicket.rootCauseAnalysis" name="rootCauseAnalysis" required>
+                    <mat-error
+                        *ngIf="ticketForm.controls['rootCauseAnalysis']?.invalid && ticketForm.controls['rootCauseAnalysis']?.touched">
+                        Root Cause Analysis is required
+                    </mat-error>
+                </mat-form-field>
+
             </div>
 
             <!-- Save and Cancel buttons -->
             <div class="flex justify-between items-center mt-8">
-                <button type="submit" [style.background-color]="ticketForm.valid ? '#2196f3' : 'gray'"
-                    [disabled]="!ticketForm.valid"
-                    class="text-white rounded px-4 py-2 transition duration-300 ease-in-out transform hover:scale-105">
+                <button type="submit" mat-raised-button color="primary" [disabled]="!ticketForm.valid">
                     Save
                 </button>
             </div>

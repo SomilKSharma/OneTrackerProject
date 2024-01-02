@@ -78,10 +78,10 @@
       "category": "Employee Relations",
       "subCategory": "Training Request",
       "status": "Open",
-      "customer": "Michael Johnson",
+      "customer": "Michael KING SAAS",
       "issueTime": "2023-01-06T11:30:00",
-      "age": 8592,
-      "lastModifiedDate": "2023-01-09T13:45:00",
+      "age": 8669,
+      "lastModifiedDate": "2024-01-02T11:00:22.982Z",
       "rootCauseAnalysis": "Pending"
     },
     {
@@ -90,10 +90,10 @@
       "category": "Software",
       "subCategory": "Bug",
       "status": "Open",
-      "customer": "Emma Davis",
+      "customer": "Emma Jackson Call",
       "issueTime": "2023-01-07T14:15:00",
-      "age": 8565,
-      "lastModifiedDate": "2023-01-10T10:30:00",
+      "age": 8642,
+      "lastModifiedDate": "2024-01-02T10:44:26.931Z",
       "rootCauseAnalysis": "In Progress"
     },
     {
@@ -104,7 +104,7 @@
       "status": "Open",
       "customer": "Daniel Wilson",
       "issueTime": "2023-01-08T09:45:00",
-      "age": 8546,
+      "age": 8622,
       "lastModifiedDate": "2023-01-11T14:20:00",
       "rootCauseAnalysis": "Pending"
     },
@@ -113,11 +113,11 @@
       "department": "Marketing",
       "category": "Campaigns",
       "subCategory": "Social Media",
-      "status": "Open",
+      "status": "Closed",
       "customer": "Olivia Miller",
       "issueTime": "2023-01-09T16:30:00",
-      "age": 8515,
-      "lastModifiedDate": "2023-01-12T12:45:00",
+      "age": 8591,
+      "lastModifiedDate": "2024-01-02T10:44:33.930Z",
       "rootCauseAnalysis": "Completed"
     },
     {
@@ -128,7 +128,7 @@
       "status": "Open",
       "customer": "Sophia Anderson",
       "issueTime": "2023-01-10T08:15:00",
-      "age": 8499,
+      "age": 8576,
       "lastModifiedDate": "2023-01-13T11:30:00",
       "rootCauseAnalysis": "Pending"
     },
@@ -140,7 +140,7 @@
       "status": "Open",
       "customer": "Liam Taylor",
       "issueTime": "2023-01-11T12:00:00",
-      "age": 8472,
+      "age": 8548,
       "lastModifiedDate": "2023-01-14T15:15:00",
       "rootCauseAnalysis": "In Progress"
     },
@@ -152,7 +152,7 @@
       "status": "Open",
       "customer": "Ava Garcia",
       "issueTime": "2023-01-12T10:30:00",
-      "age": 8449,
+      "age": 8526,
       "lastModifiedDate": "2023-01-15T09:45:00",
       "rootCauseAnalysis": "Pending"
     },
@@ -164,7 +164,7 @@
       "status": "Open",
       "customer": "Noah Moore",
       "issueTime": "2023-01-13T14:45:00",
-      "age": 8421,
+      "age": 8497,
       "lastModifiedDate": "2023-01-16T14:00:00",
       "rootCauseAnalysis": "Completed"
     },
@@ -176,7 +176,7 @@
       "status": "Open",
       "customer": "Isabella Martinez",
       "issueTime": "2023-01-14T11:15:00",
-      "age": 8400,
+      "age": 8477,
       "lastModifiedDate": "2023-01-17T16:30:00",
       "rootCauseAnalysis": "Pending"
     },
@@ -188,7 +188,7 @@
       "status": "Open",
       "customer": "Jackson Davis",
       "issueTime": "2023-01-15T09:30:00",
-      "age": 8378,
+      "age": 8455,
       "lastModifiedDate": "2023-01-18T13:00:00",
       "rootCauseAnalysis": "Pending"
     },
@@ -200,7 +200,7 @@
       "status": "Open",
       "customer": "",
       "issueTime": "2023-12-29T12:54:58.964Z",
-      "age": 17,
+      "age": 94,
       "lastModifiedDate": "",
       "rootCauseAnalysis": ""
     },
@@ -212,7 +212,7 @@
       "status": "Open",
       "customer": "dfg",
       "issueTime": "2023-12-30T18:38",
-      "age": -7,
+      "age": 69,
       "lastModifiedDate": "2023-12-30T18:39",
       "rootCauseAnalysis": "hfds"
     },
@@ -224,7 +224,7 @@
       "status": "Open",
       "customer": "vcb",
       "issueTime": "2023-12-16T18:40",
-      "age": 329,
+      "age": 405,
       "lastModifiedDate": "2023-12-30T18:40",
       "rootCauseAnalysis": "fd"
     },
@@ -236,7 +236,7 @@
       "status": "Open",
       "customer": "adsf",
       "issueTime": "2023-12-23T18:42",
-      "age": 161,
+      "age": 237,
       "lastModifiedDate": "2024-01-06T18:42",
       "rootCauseAnalysis": "asdf"
     },
@@ -249,7 +249,7 @@
       "status": "Open",
       "customer": "ads",
       "issueTime": "2023-12-29T09:13",
-      "age": 26,
+      "age": 103,
       "lastModifiedDate": "2024-01-26T09:13",
       "rootCauseAnalysis": "asdf"
     },
@@ -262,7 +262,7 @@
       "status": "Open",
       "customer": "asdf",
       "issueTime": "2023-12-30T04:04:26.396Z",
-      "age": 2,
+      "age": 78,
       "lastModifiedDate": "2023-12-30T04:04:26.396Z",
       "rootCauseAnalysis": "asdf"
     },
@@ -275,7 +275,7 @@
       "status": "Open",
       "customer": "HI",
       "issueTime": "2023-12-30T04:15:54.456Z",
-      "age": 2,
+      "age": 78,
       "lastModifiedDate": "2023-12-30T04:15:54.456Z",
       "rootCauseAnalysis": "HI"
     },
@@ -288,7 +288,7 @@
       "status": "Open",
       "customer": "asd",
       "issueTime": "2023-12-30T04:18:44.434Z",
-      "age": 2,
+      "age": 78,
       "lastModifiedDate": "2023-12-30T04:18:44.434Z",
       "rootCauseAnalysis": "asd"
     },
@@ -314,9 +314,48 @@
       "status": "open",
       "customer": "fasdfa",
       "issueTime": "2023-12-30T06:08:23.443Z",
-      "age": 0,
+      "age": 76,
       "lastModifiedDate": "2023-12-30T06:08:23.443Z",
       "rootCauseAnalysis": "sdf"
+    },
+    {
+      "id": 26,
+      "department": "6245",
+      "ticketClosedIn4": false,
+      "category": "3456",
+      "subCategory": "3456",
+      "status": "open",
+      "customer": "34563",
+      "issueTime": "2024-01-02T10:55:20.484Z",
+      "age": 0,
+      "lastModifiedDate": "2024-01-02T10:55:20.484Z",
+      "rootCauseAnalysis": "456"
+    },
+    {
+      "id": 27,
+      "department": "4657",
+      "ticketClosedIn4": false,
+      "category": "467",
+      "subCategory": "4567",
+      "status": "open",
+      "customer": "45674",
+      "issueTime": "2024-01-02T10:55:47.399Z",
+      "age": 0,
+      "lastModifiedDate": "2024-01-02T10:55:47.399Z",
+      "rootCauseAnalysis": "567"
+    },
+    {
+      "id": 28,
+      "department": "Hogaya",
+      "ticketClosedIn4": false,
+      "category": "fas",
+      "subCategory": "ask",
+      "status": "open",
+      "customer": "fast",
+      "issueTime": "2024-01-02T10:59:04.356Z",
+      "age": 0,
+      "lastModifiedDate": "2024-01-02T10:59:04.356Z",
+      "rootCauseAnalysis": "dasd"
     }
   ]
 }
