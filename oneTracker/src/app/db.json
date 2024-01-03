@@ -324,11 +324,11 @@
       "ticketClosedIn4": false,
       "category": "3456",
       "subCategory": "3456",
-      "status": "open",
+      "status": "Closed",
       "customer": "34563",
       "issueTime": "2024-01-02T10:55:20.484Z",
       "age": 0,
-      "lastModifiedDate": "2024-01-02T10:55:20.484Z",
+      "lastModifiedDate": "2024-01-02T11:02:10.784Z",
       "rootCauseAnalysis": "456"
     },
     {
