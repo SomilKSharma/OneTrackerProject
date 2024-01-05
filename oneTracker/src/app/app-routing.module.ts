@@ -8,6 +8,7 @@ import { ViewallticketsComponent } from './components/viewalltickets/viewalltick
 import { ViewticketComponent } from './components/viewticket/viewticket.component';
 import { EditticketComponent } from './components/editticket/editticket.component';
 import { AuthGuard, AuthGuardLogin } from './services/auth.guard';
+import { RcaComponent } from './components/rca/rca.component';
 
 const routes: Routes = [
   { path: '',  canActivate: [AuthGuardLogin], component: LoginComponent },
@@ -18,8 +19,9 @@ const routes: Routes = [
     children: [
       { path: 'addticket', component: AddticketComponent },
       { path: 'data', component: DataComponent },
+      { path: 'rca/:id', component: RcaComponent },
       { path: 'viewalltickets', component: ViewallticketsComponent },
-      { path: 'viewticket', component: ViewticketComponent },
+      { path: 'viewticket/:id', component: ViewticketComponent },
       { path: 'editticket/:id', component: EditticketComponent },
     ] 
   },

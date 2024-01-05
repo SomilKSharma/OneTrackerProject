@@ -92,10 +92,10 @@ export class ViewallticketsComponent implements OnInit {
   
   addRca(ticketId: number, event: Event) {
     event.stopPropagation();
-    console.log('Hey');
+    this.router.navigate(['/dashboard', 'rca', ticketId]);
   }
 
-  editTicket(ticketId: number): void {
-    this.router.navigate(['/dashboard', 'editticket', ticketId]);
+  viewTicket(ticketId: number): void {
+    this.router.navigate(['/dashboard', 'viewticket', ticketId]);
   }
 }
