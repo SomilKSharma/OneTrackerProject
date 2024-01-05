@@ -10,19 +10,24 @@ import { Router } from '@angular/router';
 })
 export class EditticketComponent implements OnInit {
   editing: boolean = true;
-  ticket={
-    id: 0,
-    department: "",
-    category: "",
-    subCategory: "",
-    "ticketClosedIn4":false,
-    status: "",
-    customer: "",
-    issueTime: new Date(),
-    age: 0, // in days
-    lastModifiedDate: new Date(),
-    rootCauseAnalysis: '',
-  }; // Change the type according to your ticket structure
+  ticket = {
+    "id": 0,
+    "department": "",
+    "category": "",
+    "subCategory": "",
+    "status": "",
+    "customer": "",
+    "issueTime": "2024-01-05T00:00:00.000Z", // Update with the current date and time
+    "age": 0, // in days
+    "lastModifiedDate": "2024-01-05T00:00:00.000Z", // Update with the current date and time
+    "rootCauseAnalysis": "",
+    "LISCustomer": "LIS Customer Name",
+    "subjectIssue": "Brief description of the subject/issue",
+    "issueDescription": "Detailed description of the issue",
+    "emailID": "customer@email.com",
+    "escalationEmailID": "escalation@email.com",
+    "teamsCallLink": "Teams Call Link"
+  };
 
   constructor(private route: ActivatedRoute, private ticketService: TicketService, private router:Router) {}
 
@@ -49,7 +54,7 @@ export class EditticketComponent implements OnInit {
   }
 
   updateTicket() {
-    this.ticket.lastModifiedDate = new Date();
+    this.ticket.lastModifiedDate = String(new Date());
     // Update the existing ticket
     this.ticketService.updateTicket(this.ticket.id, this.ticket).subscribe(
       (updatedTicket: any) => {

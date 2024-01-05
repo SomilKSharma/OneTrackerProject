@@ -60,6 +60,7 @@ export class ViewallticketsComponent implements OnInit {
 
   updateDatabase(): void {
     this.displayedTickets.data.forEach((ticket) => {
+      console.log(ticket);
       const updatedData = { ...ticket, id: ticket.id };
       this.ticketService.updateTicket(ticket.id, updatedData).subscribe(
         (response) => {

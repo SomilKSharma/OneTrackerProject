@@ -11,19 +11,24 @@ import { Router } from '@angular/router';
 export class ViewticketComponent implements OnInit {
   
   editing: boolean = true;
-  ticket={
-    id: 0,
-    department: "",
-    category: "",
-    subCategory: "",
-    "ticketClosedIn4":false,
-    status: "",
-    customer: "",
-    issueTime: new Date(),
-    age: 0, // in days
-    lastModifiedDate: new Date(),
-    rootCauseAnalysis: '',
-  }; // Change the type according to your ticket structure
+  ticket = {
+    "id": 0,
+    "department": "",
+    "category": "",
+    "subCategory": "",
+    "status": "",
+    "customer": "",
+    "issueTime": "2024-01-05T00:00:00.000Z", // Update with the current date and time
+    "age": 0, // in days
+    "lastModifiedDate": "2024-01-05T00:00:00.000Z", // Update with the current date and time
+    "rootCauseAnalysis": "",
+    "LISCustomer": "LIS Customer Name",
+    "subjectIssue": "Brief description of the subject/issue",
+    "issueDescription": "Detailed description of the issue",
+    "emailID": "customer@email.com",
+    "escalationEmailID": "escalation@email.com",
+    "teamsCallLink": "Teams Call Link"
+  };
 
   constructor(private route: ActivatedRoute, private ticketService: TicketService, private router:Router) {}
 
@@ -41,7 +46,7 @@ export class ViewticketComponent implements OnInit {
     // Use the TicketService to fetch the ticket details
     this.ticketService.getTicketById(ticketId).subscribe(
       (response: any) => {
-        this.ticket = response; // Assuming your API returns the ticket details
+        this.ticket = response;
       },
       (error) => {
         console.error('Error fetching ticket:', error);
@@ -49,5 +54,7 @@ export class ViewticketComponent implements OnInit {
     );
   }
 
-  
+  editTicket() {
+    this.router.navigate(['/dashboard', 'editticket', this.ticket.id]);
+  }
 }
