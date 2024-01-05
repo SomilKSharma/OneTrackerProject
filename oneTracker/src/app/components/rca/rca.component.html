@@ -1,93 +1,90 @@
-<div class="min-h-screen flex items-center justify-center bg-gray-100">
-    <div class="max-w-md w-full p-8 bg-white shadow-lg rounded-md">
+<div class="min-h-screen flex justify-center bg-gray-100">
+    <div class="max-w-5xl w-full m-5 p-8 bg-white shadow-lg rounded-md">
+
         <form #ticketForm="ngForm" (ngSubmit)="updateTicket()" novalidate>
 
             <div class="text-center mb-6">
-                <h2 class="text-3xl font-bold text-blue-500">Root Cause Analysis</h2>
+                <h2 class="text-3xl font-bold text-blue-500">Update Root Cause Analysis</h2>
             </div>
 
-            <div class="mb-6">
+            <div class="grid w-full grid-cols-2 gap-2 mb-6">
 
-                <!-- Department -->
-                <div class="mt-4">
-                    <mat-form-field appearance="fill">
-                        <mat-label>Department</mat-label>
-                        <input matInput [(ngModel)]="ticket.department" name="department" required>
-                        <mat-error
-                            *ngIf="ticketForm.controls['department']?.invalid && ticketForm.controls['department']?.touched">
-                            Department is required
-                        </mat-error>
-                    </mat-form-field>
+                <!-- Left side - ID, Department, Category, Sub-Category, Status, Customer, Issue Time -->
+                <div>
+
+                    <div class="mt-4">
+                        <mat-form-field appearance="fill" style="width: 300px;" style="width: 300px;">
+                            <mat-label>ID</mat-label>
+                            <input matInput [(ngModel)]="ticket.id" name="id" readonly>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="mt-4">
+                        <mat-form-field appearance="fill" style="width: 300px;">
+                            <mat-label>Customer</mat-label>
+                            <input matInput [(ngModel)]="ticket.customer" name="customer" readonly>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="mt-4">
+                        <mat-form-field appearance="fill" style="width: 300px;">
+                            <mat-label>Issue Time</mat-label>
+                            <input matInput [(ngModel)]="ticket.issueTime" #issueTimeInput="ngModel" name="issueTime"
+                                readonly>
+                        </mat-form-field>
+                    </div>
+
                 </div>
 
-                <!-- Category -->
-                <div class="mt-4">
-                    <mat-form-field appearance="fill">
-                        <mat-label>Category</mat-label>
-                        <input matInput [(ngModel)]="ticket.category" name="category" required>
-                        <mat-error
-                            *ngIf="ticketForm.controls['category']?.invalid && ticketForm.controls['category']?.touched">
-                            Category is required
-                        </mat-error>
-                    </mat-form-field>
+                <!-- Right side - Age, Last Modified Date -->
+                <div>
+
+                    <div class="mt-4">
+                        <mat-form-field appearance="fill" style="width: 300px;">
+                            <mat-label>Age</mat-label>
+                            <input matInput [(ngModel)]="ticket.age" name="age" readonly>
+                        </mat-form-field>
+                    </div>
+
+
+                    <div class="mt-4">
+                        <mat-form-field appearance="fill" style="width: 300px;">
+                            <mat-label>Department</mat-label>
+                            <input matInput [(ngModel)]="ticket.department" name="department" readonly>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="mt-4">
+                        <mat-form-field appearance="fill" style="width: 300px;">
+                            <mat-label>Last Modified Date</mat-label>
+                            <input matInput [(ngModel)]="ticket.lastModifiedDate" name="lastModifiedDate" readonly>
+                        </mat-form-field>
+                    </div>
+
                 </div>
 
-                <!-- Sub-Category -->
-                <div class="mt-4">
-                    <mat-form-field appearance="fill">
-                        <mat-label>Sub-Category</mat-label>
-                        <input matInput [(ngModel)]="ticket.subCategory" name="subCategory" required>
-                        <mat-error
-                            *ngIf="ticketForm.controls['subCategory']?.invalid && ticketForm.controls['subCategory']?.touched">
-                            Sub-Category is required
-                        </mat-error>
-                    </mat-form-field>
-                </div>
+            </div>
 
-                <!-- Status -->
-                <div class="mt-4">
-                    <mat-form-field appearance="fill">
-                        <mat-label>Status</mat-label>
-                        <mat-select [(ngModel)]="ticket.status" name="status" required>
-                            <mat-option value="Open">Open</mat-option>
-                            <mat-option value="Closed">Closed</mat-option>
-                        </mat-select>
-                        <mat-error
-                            *ngIf="ticketForm.controls['status']?.invalid && ticketForm.controls['status']?.touched">
-                            Status is required
-                        </mat-error>
-                    </mat-form-field>
-                </div>
+            <!-- Bottom section - Subject/Issue, Issue Description, Root Cause Analysis -->
+            <div class="mt-6 col-span-2">
 
-                <!-- Customer -->
                 <div class="mt-4">
-                    <mat-form-field appearance="fill">
-                        <mat-label>Customer</mat-label>
-                        <input matInput [(ngModel)]="ticket.customer" name="customer" required>
-                        <mat-error
-                            *ngIf="ticketForm.controls['customer']?.invalid && ticketForm.controls['customer']?.touched">
-                            Customer is required
-                        </mat-error>
-                    </mat-form-field>
-                </div>
-
-                <!-- Root Cause Analysis -->
-                <div class="mt-4">
-                    <mat-form-field appearance="fill">
+                    <mat-form-field appearance="fill" style="width: 900px;">
                         <mat-label>Root Cause Analysis</mat-label>
-                        <input matInput [(ngModel)]="ticket.rootCauseAnalysis" name="rootCauseAnalysis" required>
-                        <mat-error
-                            *ngIf="ticketForm.controls['rootCauseAnalysis']?.invalid && ticketForm.controls['rootCauseAnalysis']?.touched">
+                        <input matInput [(ngModel)]="ticket.rootCauseAnalysis" #rcaInput="ngModel"
+                            name="rootCauseAnalysis" required>
+                        <mat-error *ngIf=" rcaInput.invalid && (rcaInput.dirty || rcaInput.touched)">
                             Root Cause Analysis is required
                         </mat-error>
                     </mat-form-field>
                 </div>
+
             </div>
 
             <!-- Save and Cancel buttons -->
-            <div class="flex justify-between items-center mt-8">
-                <button type="submit" mat-raised-button color="primary" [disabled]="!ticketForm.valid">
-                    Save
+            <div class="flex justify-end mt-8">
+                <button type="submit" mat-raised-button color="primary">
+                    Submit
                 </button>
             </div>
 

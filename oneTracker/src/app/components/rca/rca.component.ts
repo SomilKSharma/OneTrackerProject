@@ -12,16 +12,13 @@ export class RcaComponent implements OnInit {
   ticket={
     id: 0,
     department: "",
-    category: "",
-    subCategory: "",
     "ticketClosedIn4":false,
-    status: "",
     customer: "",
     issueTime: new Date(),
-    age: 0, // in days
+    age: 0, 
     lastModifiedDate: new Date(),
     rootCauseAnalysis: '',
-  }; // Change the type according to your ticket structure
+  }; 
 
   constructor(private route: ActivatedRoute, private ticketService: TicketService, private router:Router) {}
 

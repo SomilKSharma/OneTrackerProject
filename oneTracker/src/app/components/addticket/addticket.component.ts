@@ -8,28 +8,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./addticket.component.scss']
 })
 export class AddticketComponent {
-  newTicket = {
-    id: 0,
-    department: "",
-    "ticketClosedIn4":false,
-    category: "",
-    subCategory: "",
-    status: "",
-    customer: "",
-    issueTime:new Date(),
-    age: 0, 
-    lastModifiedDate: new Date(),
-    rootCauseAnalysis: '',
+  ticket = {
+    "id": 0,
+    "department": "",
+    "category": "",
+    "subCategory": "",
+    "status": "",
+    "customer": "",
+    "issueTime": "2024-01-05T00:00:00.000Z", // Update with the current date and time
+    "age": 0, // in days
+    "lastModifiedDate": "2024-01-05T00:00:00.000Z", // Update with the current date and time
+    "rootCauseAnalysis": "",
+    "LISCustomer": "LIS Customer Name",
+    "subjectIssue": "Brief description of the subject/issue",
+    "issueDescription": "Detailed description of the issue",
+    "emailID": "customer@email.com",
+    "escalationEmailID": "escalation@email.com",
+    "teamsCallLink": "Teams Call Link"
   };
 
   constructor(private ticketService: TicketService, private router:Router) {}
 
   createTicket(): void {
     // Set the issueTime to the current date and time
-    this.newTicket.issueTime = new Date();
-    this.newTicket.lastModifiedDate = new Date();
+    this.ticket.issueTime = String(new Date());
+    this.ticket.lastModifiedDate = String(new Date());
     
-    this.ticketService.createTicket(this.newTicket).subscribe(
+    this.ticketService.createTicket(this.ticket).subscribe(
       (createdTicket) => {
         console.log('Ticket created successfully:', createdTicket);
         // Optionally, you can redirect to a different page or perform other actions
