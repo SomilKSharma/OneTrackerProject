@@ -9,7 +9,7 @@
             </th>
             <td mat-cell *matCellDef="let ticket" class="p-3 bg-blue-100 text-lg">
                 <ng-container *ngIf="column !== 'rootCauseAnalysis'; else addBtn">
-                    {{ ticket[column] }}
+                    {{ column === 'issueTime' ? formatTime(ticket[column]) : column === 'lastModifiedDate'? formatDate(ticket[column]):ticket[column] }}
                 </ng-container>
                 <ng-template #addBtn>
                     <button mat-raised-button color="primary" (click)="addRca(ticket.id, $event)">Add</button>

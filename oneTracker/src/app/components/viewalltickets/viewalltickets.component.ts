@@ -45,6 +45,15 @@ export class ViewallticketsComponent implements OnInit {
     });
   }
 
+  formatTime(issueTime: string): string {
+    // Assuming issueTime is a string representing the time
+    return new Date(issueTime).toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' });
+  }
+
+  formatDate(date: string): string{
+    return new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
+  }
+
   fetchOpenTickets(): void {
     this.ticketService.getTickets().subscribe((tickets) => {
       this.displayedTickets = new MatTableDataSource(tickets.filter(

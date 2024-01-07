@@ -15,9 +15,9 @@ export class AddticketComponent {
     "subCategory": "",
     "status": "",
     "customer": "",
-    "issueTime": "2024-01-05T00:00:00.000Z", // Update with the current date and time
+    "issueTime": new Date(), // Update with the current date and time
     "age": 0, // in days
-    "lastModifiedDate": "2024-01-05T00:00:00.000Z", // Update with the current date and time
+    "lastModifiedDate": new Date(), // Update with the current date and time
     "rootCauseAnalysis": "",
     "LISCustomer": "LIS Customer Name",
     "subjectIssue": "Brief description of the subject/issue",
@@ -31,8 +31,8 @@ export class AddticketComponent {
 
   createTicket(): void {
     // Set the issueTime to the current date and time
-    this.ticket.issueTime = String(new Date());
-    this.ticket.lastModifiedDate = String(new Date());
+    this.ticket.issueTime = new Date();
+    this.ticket.lastModifiedDate = new Date();
     
     this.ticketService.createTicket(this.ticket).subscribe(
       (createdTicket) => {
