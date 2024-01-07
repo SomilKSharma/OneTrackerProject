@@ -13,7 +13,7 @@ export class AddticketComponent {
     "department": "",
     "category": "",
     "subCategory": "",
-    "status": "",
+    "status": "Open",
     "customer": "",
     "issueTime": new Date(), // Update with the current date and time
     "age": 0, // in days

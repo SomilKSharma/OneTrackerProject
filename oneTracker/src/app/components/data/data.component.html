@@ -26,4 +26,13 @@
             <p class="mat-body-1 font-bold">{{ closedAfter4Hrs }}</p>
         </div>
     </div>
+    <div class="mat-card text-2xl p-4 rounded-md shadow-md transform transition hover:scale-105 hover:shadow-lg">
+        <h2 class="mat-h2 font-semibold mb-2">Tickets Created Per Day 📊</h2>
+        <div style="display: block;">
+            <canvas baseChart [datasets]="[{ data: ticketsPerDayValues, label: 'Tickets Created' }]"
+                [labels]="ticketsPerDayLabels" [options]="lineChartOptions" [legend]="lineChartLegend"
+                [type]="lineChartType">
+            </canvas>
+        </div>
+    </div>
 </div>

@@ -37,19 +37,6 @@
                         </mat-form-field>
                     </div>
 
-                    <div class="mt-4">
-                        <mat-form-field appearance="fill" style="width: 300px;">
-                            <mat-label>Status</mat-label>
-                            <mat-select #statusInput="ngModel" [(ngModel)]="ticket.status" name="status" required>
-                                <mat-option value="Open">Open</mat-option>
-                                <mat-option value="Close">Close</mat-option>
-                            </mat-select>
-                            <mat-error *ngIf="statusInput.invalid && (statusInput.dirty || statusInput.touched)">
-                                Status is required
-                            </mat-error>
-                        </mat-form-field>
-                    </div>
-
 
                     <div class="mt-4">
                         <mat-form-field appearance="fill" style="width: 300px;">

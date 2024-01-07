@@ -15,6 +15,8 @@ import { AddticketComponent } from './components/addticket/addticket.component';
 import { DataComponent } from './components/data/data.component';
 import { RcaComponent } from './components/rca/rca.component';
 import { ViewallticketsComponent } from './components/viewalltickets/viewalltickets.component';
+import { NgChartsModule } from 'ng2-charts';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { ViewallticketsComponent } from './components/viewalltickets/viewalltick
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgChartsModule
   ],
   providers: [
     provideClientHydration()
