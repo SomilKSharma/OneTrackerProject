@@ -82,7 +82,7 @@ server.post('/api/tickets', (req, res) => {
     // Add the new ticket to the database
     router.db.get('tickets').push(newTicket).write();
 
-    res.json(newTicket);
+    res.json({ title: 'Updated Ticket' });
 });
 
 
